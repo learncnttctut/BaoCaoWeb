@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- PHẦN KHAI BÁO THÔNG TIN TRANG -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hành trình | Nguyễn Văn Phước</title>
+
+    <!-- Nhúng Bootstrap và Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nhúng file CSS riêng -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Nhúng Font chữ -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <!-- PHẦN 1: THANH ĐIỀU HƯỚNG (NAVBAR) -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#"
+          >NGUYỄN VĂN PHƯỚC</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Các liên kết menu -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-primary fw-semibold" href="#"
+                >Hành trình</a
+              >
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Dự án</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Khám phá</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Kết nối</a></li>
+          </ul>
+          <span class="ms-3 fs-5">🔍</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PHẦN 2: ẢNH BANNER ĐẦU TRANG CÓ HIỆU ỨNG RƠI -->
+ 
+<section class="position-relative">
+    <img
+      src="images/anhtapthe.jpg"
+      alt="Banner của Phước"
+      class="img-fluid rounded w-100"
+      style="height: 400px; object-fit: cover"
+    />
+    <!-- Nền hiệu ứng tuyết -->
+    <div class="falling-container"></div>
+  </section>
+
+
+    <!-- LỚP PHỦ HIỆU ỨNG RƠI -->
+          <div
+            class="falling-container"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 2;
+              pointer-events: none;
+              overflow: hidden;
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPT: TẠO HIỆU ỨNG BÔNG TUYẾT RƠI -->
+    <script>
+        const container = document.querySelector(".falling-container");
+      
+        function createSnowflake() {
+          const flake = document.createElement("div");
+          flake.classList.add("falling-item");
+          flake.textContent = "❄";
+          flake.style.left = Math.random() * window.innerWidth + "px";
+          flake.style.fontSize = (16 + Math.random() * 16) + "px";
+          container.appendChild(flake);
+          setTimeout(() => flake.remove(), 6000);
+        }
+      
+        setInterval(createSnowflake, 300);
+      </script>
+      
+
+    <!-- PHẦN 3: HERO SECTION (TIÊU ĐỀ TRANG) -->
+    <div class="hero">
+      <h1 class="display-4">HÀNH TRÌNH PHÁT TRIỂN BẢN THÂN</h1>
+      <p class="lead">
+        Nơi ghi lại những bước tiến, nỗ lực và dấu ấn trên con đường học tập,
+        rèn luyện và trưởng thành của tôi.
+      </p>
+    </div>
+
+    <!-- PHẦN 4: CÁC THẺ CARD HÀNH TRÌNH -->
+    <div class="custom-card-container">
+      <!-- Card 1: Sinh viên 5 tốt -->
+      <a href="#" class="custom-card card-sv5t">
+        <div>
+          <div class="custom-card-title">Sinh viên 5 tốt</div>
+          <div class="custom-card-text">
+            Những tiêu chí và trải nghiệm của mình khi phấn đấu đạt danh hiệu
+            Sinh viên 5 tốt.
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Lập trình viên -->
+      <a href="#" class="custom-card card-ltv">
+        <div>
+          <div class="custom-card-title">Lập trình viên</div>
+          <div class="custom-card-text">
+            Hành trình học lập trình, các dự án mình đã làm, và kinh nghiệm tích
+            luỹ.
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Thanh niên tiên tiến -->
+      <a href="#" class="custom-card card-tntt">
+        <div>
+          <div class="custom-card-title">Thanh niên tiên tiến</div>
+          <div class="custom-card-text">
+            Tham gia phong trào, hoạt động Đoàn, và những lần vinh dự được ghi
+            nhận.
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- PHẦN 5: ẢNH CHIA TỶ LỆ 1:3 -->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            src="images/anhchandung.jpg"
+            alt="Ảnh chân dung"
+            class="w-100 rounded"
+            style="height: 300px; object-fit: cover"
+          />
+        </div>
+        <div class="col-md-9">
+          <img
+            src="images/tongket6thang.jpg"
+            alt="Ảnh hoạt động"
+            class="w-100 rounded"
+            style="height: 300px; object-fit: cover"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- PHẦN 6: CHÂN TRANG (FOOTER) -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row align-items-start">
+          <!-- Cột 1: Thông tin cá nhân -->
+          <div class="col-md-4 mb-4">
+            <div class="profile-info">
+              <img
+                src="images/avatar.jpg"
+                alt="Nguyễn Văn Phước"
+                class="img-fluid rounded-circle mb-3 mx-auto d-block"
+              />
+              <h5>Nguyễn Văn Phước</h5>
+              <p class="tagline text-muted">
+                A person temporarily works as a software engineer
+              </p>
+            </div>
+          </div>
+
+         <!-- Cột 2: Liên kết điều hướng -->
+          <div class="col-md-4 mb-4">
+            <div class="links-widget">
+              <h4 class="footer-title">Liên kết</h4>
+              <ul class="list-unstyled link-list">
+                <li>
+                  <a href="index.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Giới thiệu</a
+                  >
+                </li>
+                <li>
+                  <a href="hanhtrinh.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Hành trình</a
+                  >
+                </li>
+                <li>
+                  <a href="duan.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Dự án</a
+                  >
+                </li>
+                <li>
+                  <a href="khampha.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Khám phá</a
+                  >
+                </li>
+                <li>
+                  <a href="ketnoi.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Kết nối</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cột 3: Thông tin liên hệ -->
+          <div class="col-md-4 mb-4">
+            <div class="contact-widget">
+              <h4 class="footer-title">Kết nối</h4>
+              <p><strong>Phone (Zalo):</strong> 0333947524</p>
+              <p><strong>Email:</strong> learncnttctut@gmail.com</p>
+              <p><strong>Địa chỉ:</strong> Ninh Kiều, Cần Thơ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- PHẦN 7: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH -->
+    <div class="social-fixed">
+      <a href="https://www.facebook.com/share/15Kbbdbduq/"
+        ><img src="images/facebook.png" alt="Facebook"
+      /></a>
+      <a href="mailto:learncnttctut@gmail.com"
+        ><img src="images/email.png" alt="Email"
+      /></a>
+      <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
+    </div>
+
+    <!-- PHẦN 8: COPYRIGHT CUỐI TRANG -->
+    <div class="footer-copyright">
+      © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
+    </div>
+
+    <!-- PHẦN 9: NHÚNG JAVASCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

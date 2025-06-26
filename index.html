@@ -4,92 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=\, initial-scale=1.0" />
     <title>Nguyễn Văn Phước</title>
+    <!-- Nhúng Bootstrap và Google Fonts -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nhúng file CSS riêng -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Nhúng Font chữ -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
-  <link rel="stylesheet" href="style.css" />
+
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="index.html">
-          <img src="images/logo.png" alt="Logo" class="logo-img img-fluid" />
-        </a>
-
-        <!-- Form tìm kiếm (luôn hiển thị) -->
-        <form class="d-flex flex-grow-1 mx-2 search-wrapper" role="search">
-          <input
-            type="search"
-            class="form-control search-input"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-          <button
-            class="search-button"
-            type="submit"
-            aria-label="Submit search"
-          >
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-
-        <!-- Nút thu gọn menu (mobile) -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#"
+          >NGUYỄN VĂN PHƯỚC</a
+        >
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#PNNavbar"
-          aria-controls="PNNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#mainNav"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Menu chính -->
-        <div class="collapse navbar-collapse" id="PNNavbar">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Các liên kết menu -->
             <li class="nav-item">
-              <a class="nav-link active" href="#">Giới thiệu</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
+              <a class="nav-link active text-primary fw-semibold" href="#"
+                >Giới thiệu</a
               >
-                Nhật ký
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">Đoàn viên tiêu biểu</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"
-                    >Thanh niên làm theo lời Bác</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="#">Sinh viên năm Tốt</a></li>
-              </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Hoạt động</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nghiên cứu và học tập</a>
+              <a class="nav-link" href="hanhtrinh.html">Hành trình</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="duan.html">Dự án</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="khampha.html">Khám phá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ketnoi.html">Kết nối</a>
+            </li>
           </ul>
+          <span class="ms-3 fs-5">🔍</span>
         </div>
       </div>
     </nav>
-
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -203,7 +182,7 @@
             <p class="lead mb-2">Chuyên ngành: Công nghệ thông tin</p>
             <p class="lead mb-4">
               Chức vụ: Phó liên chi Khoa Công nghệ thông tin, Ủy viên BCH Đoàn
-              khoa CNTT, Lớp trưởng lớp CNTT khóa 2023
+              khoa Công nghệ thông tin, Lớp trưởng lớp Công nghệ thông tin 2023
             </p>
             <div class="title-decorator my-3"></div>
           </div>
@@ -211,90 +190,87 @@
       </div>
     </div>
 
-    <footer class="footer-section bg-light pt-5">
+    <footer class="footer-section">
       <div class="container">
-        <div class="row">
-          <!-- Cột 1: Thông tin -->
+        <div class="row align-items-start">
+          <!-- Cột 1: Thông tin cá nhân -->
           <div class="col-md-4 mb-4">
-            <div class="profile-info text-center">
+            <div class="profile-info">
               <img
-                src="images/Anh1.jpg"
+                src="images/avatar.jpg"
                 alt="Nguyễn Văn Phước"
                 class="img-fluid rounded-circle mb-3 mx-auto d-block"
-                style="max-width: 100px"
               />
-              <h5 class="fw-bold">Nguyễn Văn Phước</h5>
+              <h5>Nguyễn Văn Phước</h5>
               <p class="tagline text-muted">
                 A person temporarily works as a software engineer
               </p>
             </div>
           </div>
 
-          <!-- Cột 2: Liên kết -->
+          <!-- Cột 2: Liên kết điều hướng -->
           <div class="col-md-4 mb-4">
-            <div class="links-widget text-center text-md-start">
-              <h4 class="footer-title mb-3">Liên kết</h4>
+            <div class="links-widget">
+              <h4 class="footer-title">Liên kết</h4>
               <ul class="list-unstyled link-list">
                 <li>
-                  <a href="#" class="text-decoration-none text-dark"
-                    >Giới thiệu</a
+                  <a href="index.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Giới thiệu</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-decoration-none text-dark">Nhật ký</a>
-                </li>
-                <li>
-                  <a href="#" class="text-decoration-none text-dark"
-                    >Hoạt động</a
+                  <a href="hanhtrinh.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Hành trình</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="text-decoration-none text-dark"
-                    >Nghiên cứu & học tập</a
+                  <a href="duan.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Dự án</a
+                  >
+                </li>
+                <li>
+                  <a href="khampha.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Khám phá</a
+                  >
+                </li>
+                <li>
+                  <a href="ketnoi.html"
+                    ><i class="fa-solid fa-angle-right me-2"></i>Kết nối</a
                   >
                 </li>
               </ul>
             </div>
           </div>
 
-          <!-- Cột 3: Liên hệ -->
+          <!-- Cột 3: Thông tin liên hệ -->
           <div class="col-md-4 mb-4">
-            <div class="contact-widget text-center text-md-start">
-              <h4 class="footer-title mb-3">Liên hệ</h4>
-              <p>
-                <i class="fas fa-phone-alt me-2 text-success"></i
-                ><strong>Phone (Zalo):</strong> 0333947524
-              </p>
-              <p>
-                <i class="fas fa-envelope me-2 text-danger"></i
-                ><strong>Email:</strong> learncnttctut@gmail.com
-              </p>
-              <p>
-                <i class="fas fa-map-marker-alt me-2 text-primary"></i
-                ><strong>Địa chỉ:</strong> Võ Trường Toản, Ninh Kiều, Cần Thơ
-              </p>
-
-              <div class="social-icons mt-3">
-                <a
-                  href="https://www.facebook.com/share/15Kbbdbduq/"
-                  class="me-3 text-primary"
-                >
-                  <i class="fab fa-facebook-f fa-lg"></i>
-                </a>
-                <a
-                  href="mailto:learncnttctut@gmail.com"
-                  class="me-3 text-danger"
-                >
-                  <i class="fas fa-envelope fa-lg"></i>
-                </a>
-                <a href="tel:0333947524" class="text-success">
-                  <i class="fas fa-phone fa-lg"></i>
-                </a>
-              </div>
+            <div class="contact-widget">
+              <h4 class="footer-title">Kết nối</h4>
+              <p><strong>Phone (Zalo):</strong> 0333947524</p>
+              <p><strong>Email:</strong> learncnttctut@gmail.com</p>
+              <p><strong>Địa chỉ:</strong> Ninh Kiều, Cần Thơ</p>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- PHẦN 7: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH -->
+    <div class="social-fixed">
+      <a href="https://www.facebook.com/share/15Kbbdbduq/"
+        ><img src="images/facebook.png" alt="Facebook"
+      /></a>
+      <a href="mailto:learncnttctut@gmail.com"
+        ><img src="images/email.png" alt="Email"
+      /></a>
+      <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
+    </div>
+
+    <!-- PHẦN 8: COPYRIGHT CUỐI TRANG -->
+    <div class="footer-copyright">
+      © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
+    </div>
+    <!-- PHẦN 9: NHÚNG JAVASCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
