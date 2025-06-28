@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
+    <!-- PHẦN KHAI BÁO THÔNG TIN TRANG -->
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
-    <title>Nguyễn Văn Phước</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hành trình | Nguyễn Văn Phước</title>
+
     <!-- Nhúng Bootstrap và Google Fonts -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -20,11 +23,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
 
@@ -69,81 +67,126 @@
         </div>
       </div>
     </nav>
-    <!-- Carousel -->
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide-to="1"
-        ></button>
+    <!-- PHẦN 2: ẢNH BANNER ĐẦU TRANG CÓ HIỆU ỨNG RƠI -->
+    <section
+      class="position-relative"
+      style="overflow: hidden; margin: 0; padding: 0"
+    >
+      <!-- Ảnh banner -->
+      <img
+        src="images/bannerindex.jpg"
+        alt="Banner của Phước"
+        style="width: 100vw; height: auto; display: block"
+      />
+
+      <!-- LỚP PHỦ HIỆU ỨNG RƠI (trên ảnh) -->
+      <div
+        class="falling-container"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+          overflow: hidden;
+        "
+      ></div>
+    </section>
+
+    <!-- SCRIPT: TẠO HIỆU ỨNG BÔNG TUYẾT RƠI -->
+    <script>
+      const container = document.querySelector(".falling-container");
+
+      function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.classList.add("falling-item");
+        flake.textContent = "❄";
+        flake.style.left = Math.random() * window.innerWidth + "px";
+        flake.style.fontSize = 16 + Math.random() * 16 + "px";
+        container.appendChild(flake);
+        setTimeout(() => flake.remove(), 6000);
+      }
+
+      setInterval(createSnowflake, 300);
+    </script>
+
+    <!-- GIỚI THIỆU BẢN THÂN -->
+    <div class="container-fluid mt-5">
+      <!-- TIÊU ĐỀ -->
+      <div class="header-title text-center mb-5">
+        <h1>GIỚI THIỆU BẢN THÂN</h1>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+
+      <!-- KHỐI GIỚI THIỆU -->
+      <div class="row profile-section">
+        <!-- ẢNH CHÂN DUNG -->
+        <div
+          class="col-md-5 p-0 d-flex align-items-center justify-content-center"
+        >
           <img
-            src="images/Anh3.jpg"
-            class="d-block w-75 mx-auto"
-            alt="Slide 1"
+            src="images/anhchandung.jpg"
+            alt="Nguyễn Văn Phước"
+            class="img-fluid portrait-img-full"
           />
         </div>
-        <div class="carousel-item">
-          <img
-            src="images/Anh4.jpg"
-            class="d-block w-75 mx-auto"
-            alt="Slide 2"
-          />
+
+        <!-- THANH ĐỨNG -->
+        <div
+          class="col-md-1 d-none d-md-flex align-items-center justify-content-center"
+        >
+          <div class="separator-line" style="height: 85%"></div>
+        </div>
+
+        <!-- NỘI DUNG GIỚI THIỆU -->
+        <div
+          class="col-md-6 content-box d-flex flex-column justify-content-center py-5"
+        >
+          <div class="intro-text-wrapper">
+            <h2 class="greeting-text">Xin chào, mình là</h2>
+            <h1 class="name-title">NGUYỄN VĂN PHƯỚC</h1>
+            <p>
+              Có những hành trình không đo bằng bước chân, mà bằng những lần dám
+              thay đổi, dám học hỏi, và dám sống thật với mình.
+            </p>
+            <p>
+              Đây là nơi ghi lại những điều từng khiến mình tò mò, băn khoăn hay
+              hứng khởi – từ kiến thức nhỏ nhất đến khoảnh khắc lớn lao nhất.
+              Nếu bạn tìm thấy sự đồng cảm, thì blog này đã làm được điều mình
+              mong.
+            </p>
+
+            <!-- THÔNG TIN CÁ NHÂN -->
+            <div class="personal-info-box mt-4">
+              <h3 class="info-title mb-3">THÔNG TIN CÁ NHÂN</h3>
+              <ul class="list-unstyled info-list">
+                <li><span class="info-label">Sinh ngày:</span> 08/04/2004</li>
+                <li><span class="info-label">Quê quán:</span> Cần Thơ</li>
+                <li>
+                  <span class="info-label">Chuyên ngành:</span> Công nghệ thông
+                  tin
+                </li>
+                <li>
+                  <span class="info-label">Đơn vị:</span> ĐH Kỹ thuật – Công
+                  nghệ Cần Thơ
+                </li>
+                <li>
+                  <span class="info-label">Chức vụ:</span> UV BCH Đoàn Khoa; Phó
+                  Liên chi Khoa CNTT
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Trước</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Tiếp</span>
-      </button>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero-section text-center py-3">
-      <div class="container-lg">
-        <h6 class="text-uppercase fw-light">Giới thiệu bản thân</h6>
-        <h1 class="display-4 fw-bold my-4">Nguyễn Văn Phước</h1>
-        <p class="lead mb-4">
-          A person temporarily works as a software engineer
-        </p>
-        <div class="title-decorator"></div>
-      </div>
-    </div>
-
-    <!-- Giới thiệu -->
-    <div class="container py-1">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h5 class="text-muted lh-lg">
-            Đây là nơi mình lưu lại các cột mốc đáng nhớ trên hành trình học tập
-            và phát triển bản thân của mình.
-          </h5>
-        </div>
-      </div>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <!------------------- PHẦN QUÁ TRÌNH HỌC TẬP------------------- -->
 
     <!-- Liên hệ -->
     <div class="container text-center py-4">
@@ -159,35 +202,6 @@
       <a href="tel:0333947524" class="btn btn-outline-success">
         <i class="fa-solid fa-phone"></i> Số điện thoại
       </a>
-    </div>
-
-    <!-- Thông tin cá nhân -->
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <!-- Cột ảnh -->
-        <div class="col-md-5 text-center">
-          <img
-            src="images/Anh1.jpg"
-            alt="Ảnh cá nhân"
-            class="img-fluid rounded shadow"
-            style="max-width: 300px"
-          />
-        </div>
-        <!-- Cột thông tin -->
-        <div class="col-md-7">
-          <div class="hero-section text-start">
-            <h6 class="text-uppercase fw-light">Thông tin cá nhân</h6>
-            <p class="lead mb-2">Sinh ngày: 08/04/2004</p>
-            <p class="lead mb-2">Quê quán: Hậu Giang</p>
-            <p class="lead mb-2">Chuyên ngành: Công nghệ thông tin</p>
-            <p class="lead mb-4">
-              Chức vụ: Phó liên chi Khoa Công nghệ thông tin, Ủy viên BCH Đoàn
-              khoa Công nghệ thông tin, Lớp trưởng lớp Công nghệ thông tin 2023
-            </p>
-            <div class="title-decorator my-3"></div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <footer class="footer-section">

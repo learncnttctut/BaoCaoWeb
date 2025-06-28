@@ -1,330 +1,569 @@
-/* === PHẦN 0: Font và nền toàn cục ===
-   Định nghĩa font chữ, màu nền cho toàn bộ trang */
+/* ---------------- PHẦN CSS CỦA TRANG HTML INDEX -----------------------  */
+
+/* ========================================================================== */
+/* BỔ SUNG: STYLE CHO TRANG GIỚI THIỆU BẢN THÂN (NEW STYLES) */
+/* ========================================================================== */
+
+/* === FONT VÀ MÀU TOÀN CỤC === */
 body {
-    font-family: "Montserrat", sans-serif;
-    margin: 0;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* === FONT CHUNG VÀ CÀI ĐẶT TOÀN TRANG === */
+body {
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* === TIÊU ĐỀ === */
+.header-title h1 {
+  font-weight: 800;
+  color: #0d47a1;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.header-title h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0d47a1;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* === KHỐI GIỚI THIỆU === */
+.profile-section {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+/* === ẢNH CÂN ĐỐI === */
+.portrait-img-full {
+  max-height: 360px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 6px #fff;
+  transition: transform 0.4s ease;
+}
+
+.portrait-img-full:hover {
+  transform: scale(1.02);
+}
+
+/* === THANH TRANG TRÍ === */
+.separator-line {
+  width: 4px;
+  background: linear-gradient(to bottom, #0d47a1, #1976d2);
+  border-radius: 6px;
+  margin: 40px 0;
+}
+
+/* TIÊU ĐỀ */
+.header-title h1 {
+  font-weight: 800;
+  color: #0d47a1;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+.header-title h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0d47a1;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* KHỐI GIỚI THIỆU */
+.profile-section {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+/* ẢNH CHÂN DUNG TO VỪA PHẢI */
+.portrait-img-full {
+  width: auto;
+  max-height: 500px; /* 🔵 tăng chiều cao hơn nữa */
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 6px #fff;
+  transition: transform 0.4s ease;
+}
+.portrait-img-full:hover {
+  transform: scale(1.025); /* hiệu ứng nhẹ khi hover */
+}
+
+/* THANH ĐỨNG */
+.separator-line {
+  width: 4px;
+  background: linear-gradient(to bottom, #0d47a1, #1976d2);
+  border-radius: 6px;
+  margin: 40px 0;
+}
+
+/* PHẦN NỘI DUNG */
+.content-box {
+  padding-left: 40px;
+  padding-right: 30px;
+  background-color: #fff;
+}
+.intro-text-wrapper {
+  padding-right: 10px;
+}
+.greeting-text {
+  font-weight: 600;
+  color: #1b2a4e;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+.name-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #1976d2;
+  margin-bottom: 20px;
+}
+.intro-text-wrapper p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #4f4f4f;
+  margin-bottom: 16px;
+}
+
+/* THÔNG TIN CÁ NHÂN */
+.info-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+.info-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #0d47a1;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.info-list {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.info-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed #ddd;
+}
+.info-list li:last-child {
+  border-bottom: none;
+}
+.info-label {
+  font-weight: 600;
+  color: #333;
+  display: inline-block;
+  width: 180px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+  }
+
+  .portrait-img-full {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .separator-line {
+    display: none;
+  }
+
+  .content-box {
+    padding: 30px 20px;
+  }
+
+  .intro-text-wrapper {
     padding: 0;
-    background-color: #f9f9f9;
-}
-
-/* === PHẦN 3: Hero Section (Tiêu đề lớn đầu trang) === */
-.hero {
-    background: #f9f9f9;
-    /* Màu nền nhạt, tạo cảm giác nhẹ nhàng, sáng sủa */
-    color: #000099;
-    /* Màu chữ là xanh đậm (xanh navy), giúp nổi bật trên nền sáng */
     text-align: center;
-    /* Căn giữa toàn bộ nội dung (tiêu đề + mô tả) trong khối */
-    padding: 40px 20px;
-    /* Tạo khoảng cách bên trong phần tử: trên/dưới 40px, trái/phải 20px */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    /* Đổ bóng mềm dưới khối để tạo chiều sâu */
-    margin-top: 40px;
-    /* Khoảng cách phía trên so với phần tử trước */
-    margin-bottom: 40px;
-    /* Khoảng cách phía dưới với phần tử tiếp theo */
+  }
+
+  .name-title {
+    font-size: 2.4rem;
+  }
+
+  .greeting-text {
+    font-size: 1.4rem;
+  }
+
+  .info-label {
+    width: 100%;
+    display: block;
+    margin-bottom: 4px;
+  }
 }
 
-.hero h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0 auto;
-    max-width: 600px;
-}
+/* === ------------------------- QUÁ TRÌNH HỌC TẬP------------------ === */
 
 /* === PHẦN 4: Card Section (Các mục hành trình) === */
 .custom-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    padding: 40px 0;
-    background-color: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #f9f9f9;
 }
 
 .custom-card {
-    width: 350px;
-    height: 200px;
-    border-radius: 32px;
-    color: white;
-    padding: 24px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  width: 350px;
+  height: 200px;
+  border-radius: 32px;
+  color: white;
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .custom-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .custom-card-title {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .custom-card-text {
-    font-size: 20px;
-    line-height: 1.25;
+  font-size: 20px;
+  line-height: 1.25;
 }
 
 .card-sv5t {
-    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
 }
 
 .card-ltv {
-    background: linear-gradient(135deg, #0062ff 0%, #33ccff 100%);
+  background: linear-gradient(135deg, #0062ff 0%, #33ccff 100%);
 }
 
 .card-tntt {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
 /* === PHẦN 6: Footer Section (Chân trang) === */
 /* === PHẦN CHÂN TRANG (FOOTER) CHÍNH === */
 .footer-section {
-    /* Font nhẹ, hiện đại dùng cho toàn bộ footer */
-    font-family: "Segoe UI Light", "Helvetica Neue Light", "Roboto Light",
-        sans-serif;
-    font-weight: 400;
-    /* Light */
-    font-size: 16px;
-    /* Cỡ chữ mặc định */
-    color: #333;
-    /* Màu chữ xám đậm */
-    background-color: #f8f9fa;
-    /* Nền xám nhạt gần trắng */
-    padding-top: 120px;
-    /* Khoảng cách phía trên nội dung (48px) */
-    /* Đổ bóng mềm toàn vùng footer */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  /* Font nhẹ, hiện đại dùng cho toàn bộ footer */
+  font-family: "Segoe UI Light", "Helvetica Neue Light", "Roboto Light",
+    sans-serif;
+  font-weight: 400;
+  /* Light */
+  font-size: 16px;
+  /* Cỡ chữ mặc định */
+  color: #333;
+  /* Màu chữ xám đậm */
+  background-color: #f8f9fa;
+  /* Nền xám nhạt gần trắng */
+  padding-top: 120px;
+  /* Khoảng cách phía trên nội dung (48px) */
+  /* Đổ bóng mềm toàn vùng footer */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* === PHẦN 1: THÔNG TIN CÁ NHÂN (ẢNH + TÊN + MÔ TẢ NGẮN) === */
 .footer-section .profile-info {
-    text-align: center;
-    /* Căn giữa toàn bộ nội dung */
+  text-align: center;
+  /* Căn giữa toàn bộ nội dung */
 }
 
 .footer-section .profile-info img {
-    max-width: 250px;
-    /* Chiều rộng tối đa ảnh đại diện */
-    border-radius: 50%;
-    /* Bo tròn ảnh thành hình tròn */
-    margin-bottom: 1rem;
-    /* Cách ảnh với tên 16px */
-    transform: translateY(-80px);
-    /* nâng ảnh lên 40px */
+  max-width: 250px;
+  /* Chiều rộng tối đa ảnh đại diện */
+  border-radius: 50%;
+  /* Bo tròn ảnh thành hình tròn */
+  margin-bottom: 1rem;
+  /* Cách ảnh với tên 16px */
+  transform: translateY(-80px);
+  /* nâng ảnh lên 40px */
 }
 
 .footer-section .profile-info h5 {
-    font-size: 22px;
-    /* Tên người dùng */
-    font-weight: bold;
-    /* In đậm */
-    margin-top: -60px;
+  font-size: 22px;
+  /* Tên người dùng */
+  font-weight: bold;
+  /* In đậm */
+  margin-top: -60px;
 }
 
 .footer-section .profile-info .tagline {
-    font-size: 16px;
-    /* Mô tả ngắn (tagline) */
-    color: #6c757d;
-    /* Màu xám tro nhẹ */
-    margin-bottom: 100px;
+  font-size: 16px;
+  /* Mô tả ngắn (tagline) */
+  color: #6c757d;
+  /* Màu xám tro nhẹ */
+  margin-bottom: 100px;
 }
 
 /* === PHẦN 2: LIÊN KẾT MENU (Dẫn đến các trang khác) === */
 .footer-section .links-widget {
-    text-align: center;
-    /* Căn giữa khi nhỏ */
+  text-align: center;
+  /* Căn giữa khi nhỏ */
 }
 
 /* Khi màn hình ≥768px thì căn trái để chuyên nghiệp */
 @media (min-width: 768px) {
-    .footer-section .links-widget {
-        text-align: left;
-    }
+  .footer-section .links-widget {
+    text-align: left;
+  }
 }
 
 /* Tiêu đề của mỗi cột trong footer */
 .footer-section .footer-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    border-bottom: 2px ridge #f9f9f9f9;
-    /* Đường line */
-    padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px ridge #f9f9f9f9;
+  /* Đường line */
+  padding-bottom: 10px;
 }
 
 /* Danh sách liên kết từng dòng */
 .footer-section .link-list li {
-    margin-bottom: 8px;
-    /* Khoảng cách giữa các dòng liên kết */
+  margin-bottom: 8px;
+  /* Khoảng cách giữa các dòng liên kết */
 }
 
 .footer-section .link-list a {
-    font-size: 16px;
-    color: #212529;
-    /* Màu xám đậm */
-    text-decoration: none;
-    /* Bỏ gạch chân */
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  color: #212529;
+  /* Màu xám đậm */
+  text-decoration: none;
+  /* Bỏ gạch chân */
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 .footer-section .link-list a:hover {
-    text-decoration: underline;
-    /* Hover vào thì gạch chân */
+  text-decoration: underline;
+  /* Hover vào thì gạch chân */
 }
 
 /* === PHẦN 3: THÔNG TIN LIÊN HỆ (Phone, Email, Địa chỉ) === */
 .footer-section .contact-widget p {
-    font-size: 16px;
-    margin-bottom: 8px;
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 .footer-section .contact-widget strong {
-    font-weight: 600;
-    /* Làm nổi bật nhãn như "Email:", "Phone:" */
+  font-weight: 600;
+  /* Làm nổi bật nhãn như "Email:", "Phone:" */
 }
 
 /* === PHẦN 4: ICON MẠNG XÃ HỘI (Footer) === */
 .footer-section .social-icons a {
-    font-size: 20px;
-    /* Kích thước biểu tượng */
-    margin-right: 12px;
-    /* Khoảng cách giữa các biểu tượng */
+  font-size: 20px;
+  /* Kích thước biểu tượng */
+  margin-right: 12px;
+  /* Khoảng cách giữa các biểu tượng */
 }
 
 /* === PHẦN 8: Dòng bản quyền dưới cùng === */
 .footer-copyright {
-    background-color: #0d47a1;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    font-size: 15px;
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-    margin-top: 0;
+  background-color: #0d47a1;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 15px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  margin-top: 0;
 }
 
 /* === PHẦN 7: Mạng xã hội nổi ở góc dưới phải === */
 .social-fixed {
-    position: fixed;
-    /* Cố định vị trí khối icon trên màn hình (không cuộn theo) */
-    bottom: 65px;
-    /* Cách mép dưới màn hình 20px */
-    right: 20px;
-    /* Cách mép phải màn hình 20px */
-    display: flex;
-    /* Dùng flexbox để sắp xếp các icon */
-    flex-direction: column;
-    /* Sắp xếp các icon theo chiều dọc */
-    gap: 12px;
-    /* Khoảng cách giữa các icon là 12px */
-    z-index: 9999;
-    /* Đặt lớp hiển thị cao nhất để không bị che bởi phần tử khác */
+  position: fixed;
+  /* Cố định vị trí khối icon trên màn hình (không cuộn theo) */
+  bottom: 65px;
+  /* Cách mép dưới màn hình 20px */
+  right: 20px;
+  /* Cách mép phải màn hình 20px */
+  display: flex;
+  /* Dùng flexbox để sắp xếp các icon */
+  flex-direction: column;
+  /* Sắp xếp các icon theo chiều dọc */
+  gap: 12px;
+  /* Khoảng cách giữa các icon là 12px */
+  z-index: 9999;
+  /* Đặt lớp hiển thị cao nhất để không bị che bởi phần tử khác */
 }
 
 .social-fixed a img {
-    width: 44px;
-    /* Chiều rộng của icon là 44px */
-    height: 44px;
-    /* Chiều cao cũng 44px để icon vuông */
-    border-radius: 50%;
-    /* Bo tròn hoàn toàn thành hình tròn */
-    object-fit: cover;
-    /* Đảm bảo ảnh lấp đầy hình tròn mà không bị méo */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    /* Đổ bóng nhẹ dưới icon tạo chiều sâu */
-    transition: all 0.3s ease;
-    /* Tạo hiệu ứng chuyển động mượt khi hover */
-    background-color: white;
-    /* Nền trắng phía sau icon (nếu ảnh là PNG có vùng trong suốt) */
+  width: 44px;
+  /* Chiều rộng của icon là 44px */
+  height: 44px;
+  /* Chiều cao cũng 44px để icon vuông */
+  border-radius: 50%;
+  /* Bo tròn hoàn toàn thành hình tròn */
+  object-fit: cover;
+  /* Đảm bảo ảnh lấp đầy hình tròn mà không bị méo */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* Đổ bóng nhẹ dưới icon tạo chiều sâu */
+  transition: all 0.3s ease;
+  /* Tạo hiệu ứng chuyển động mượt khi hover */
+  background-color: white;
+  /* Nền trắng phía sau icon (nếu ảnh là PNG có vùng trong suốt) */
 }
 
 .social-fixed a img:hover {
-    transform: scale(1.1);
-    /* Khi rê chuột vào ảnh, phóng to nhẹ lên 110% */
+  transform: scale(1.1);
+  /* Khi rê chuột vào ảnh, phóng to nhẹ lên 110% */
 }
 
 /* === PHẦN 2: HIỆU ỨNG RƠI (CHO ẢNH BANNER) === */
 @keyframes fall {
-    to {
-        transform: translateY(500px) rotate(360deg);
-        opacity: 0;
-    }
+  to {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
 }
 
 .falling-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .falling-item {
-    position: absolute;
-    top: -40px;
-    font-size: 20px;
-    color: white;
-    opacity: 0.8;
-    animation: fall 6s linear forwards;
-    user-select: none;
+  position: absolute;
+  top: -40px;
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  animation: fall 6s linear forwards;
+  user-select: none;
 }
 
 .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
 }
 
 .project-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Nếu muốn ảnh cũng có hiệu ứng */
 .project-card img {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover img {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .contact-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-    padding: 60px 15px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 60px 15px;
 }
 
 .contact-card {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+/*  PHẦN CSS TRANG KHÁM PHÁ */
+/* Zoom ảnh khi hover */
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: 0.5rem 0.5rem 0 0;
+  position: relative;
+}
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+  display: block;
+  width: 100%;
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay mờ + nút xem chi tiết */
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.img-hover-zoom:hover .img-overlay {
+  opacity: 1;
+}
+
+/* Card di chuyển nhẹ khi hover */
+.travel-card {
+  transition: transform 0.3s ease;
+}
+.travel-card:hover {
+  transform: translateY(-5px);
 }
