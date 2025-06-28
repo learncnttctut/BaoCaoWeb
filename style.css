@@ -238,6 +238,32 @@ body {
 
 /* === ------------------------- QUÁ TRÌNH HỌC TẬP------------------ === */
 
+/* ===================================== */
+/* [PHẦN CSS: HERO - HÀNH TRÌNH] */
+/* ===================================== */
+.hero {
+  padding: 100px 20px 80px;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+.hero p.lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
 /* === PHẦN 4: Card Section (Các mục hành trình) === */
 .custom-card-container {
   display: flex;

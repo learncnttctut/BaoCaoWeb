@@ -1,39 +1,54 @@
+<!-- PHẦN KHAI BÁO CƠ BẢN -->
 <!DOCTYPE html>
+<!-- Khai báo đây là tài liệu HTML5 -->
 <html lang="vi">
-  <head>
-    <!-- PHẦN KHAI BÁO THÔNG TIN TRANG -->
+  <!-- Ngôn ngữ sử dụng là tiếng Việt -->
 
+  <head>
+    <!-- MÃ HÓA VÀ TỐI ƯU TRÊN MỌI THIẾT BỊ -->
     <meta charset="UTF-8" />
+    <!-- Thiết lập bảng mã UTF-8 hỗ trợ tiếng Việt -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Responsive trên các thiết bị -->
+
+    <!-- TIÊU ĐỀ TRANG -->
     <title>Hành trình | Nguyễn Văn Phước</title>
 
-    <!-- Nhúng Bootstrap và Google Fonts -->
+    <!-- THƯ VIỆN GIAO DIỆN VÀ PHÔNG CHỮ -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Bootstrap 5 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Nhúng file CSS riêng -->
+    <!-- Font chữ Montserrat -->
     <link rel="stylesheet" href="style.css" />
-    <!-- Nhúng Font chữ -->
+    <!-- File CSS tùy chỉnh riêng -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Roboto -->
   </head>
 
   <body>
+    <!-- ===================================== -->
+    <!-- [PHẦN 1:THANH ĐIỀU HƯỚNG (NAVBAR)] -->
+    <!-- ===================================== -->
+
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
     >
       <div class="container">
+        <!-- LOGO/THƯƠNG HIỆU -->
         <a class="navbar-brand fw-bold text-primary" href="#"
           >NGUYỄN VĂN PHƯỚC</a
         >
+
+        <!-- NÚT MỞ MENU TRÊN DI ĐỘNG -->
         <button
           class="navbar-toggler"
           type="button"
@@ -42,9 +57,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- DANH MỤC MENU -->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- Các liên kết menu -->
+            <!-- Các mục menu dẫn đến các trang khác -->
             <li class="nav-item">
               <a class="nav-link active text-primary fw-semibold" href="#"
                 >Giới thiệu</a
@@ -64,22 +81,27 @@
             </li>
           </ul>
           <span class="ms-3 fs-5">🔍</span>
+          <!-- Icon tìm kiếm -->
         </div>
       </div>
     </nav>
-    <!-- PHẦN 2: ẢNH BANNER ĐẦU TRANG CÓ HIỆU ỨNG RƠI -->
+
+    <!-- ===================================== -->
+    <!-- [PHẦN 2: ẢNH BANNER CÓ HIỆU ỨNG RƠI] -->
+    <!-- ===================================== -->
+
     <section
       class="position-relative"
       style="overflow: hidden; margin: 0; padding: 0"
     >
-      <!-- Ảnh banner -->
+      <!-- Ảnh banner nền -->
       <img
         src="images/bannerindex.jpg"
         alt="Banner của Phước"
         style="width: 100vw; height: auto; display: block"
       />
 
-      <!-- LỚP PHỦ HIỆU ỨNG RƠI (trên ảnh) -->
+      <!-- Container chứa hiệu ứng bông tuyết rơi -->
       <div
         class="falling-container"
         style="
@@ -95,33 +117,36 @@
       ></div>
     </section>
 
-    <!-- SCRIPT: TẠO HIỆU ỨNG BÔNG TUYẾT RƠI -->
+    <!-- SCRIPT: TẠO BÔNG TUYẾT RƠI -->
     <script>
       const container = document.querySelector(".falling-container");
 
       function createSnowflake() {
         const flake = document.createElement("div");
         flake.classList.add("falling-item");
-        flake.textContent = "❄";
+        flake.textContent = "❄"; // Biểu tượng tuyết
         flake.style.left = Math.random() * window.innerWidth + "px";
         flake.style.fontSize = 16 + Math.random() * 16 + "px";
         container.appendChild(flake);
-        setTimeout(() => flake.remove(), 6000);
+        setTimeout(() => flake.remove(), 6000); // Xóa sau 6 giây
       }
 
-      setInterval(createSnowflake, 300);
+      setInterval(createSnowflake, 300); // Cứ mỗi 300ms tạo 1 bông tuyết
     </script>
 
-    <!-- GIỚI THIỆU BẢN THÂN -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 3: GIỚI THIỆU BẢN THÂN] -->
+    <!-- ===================================== -->
+
     <div class="container-fluid mt-5">
-      <!-- TIÊU ĐỀ -->
+      <!-- TIÊU ĐỀ CHÍNH -->
       <div class="header-title text-center mb-5">
         <h1>GIỚI THIỆU BẢN THÂN</h1>
       </div>
 
-      <!-- KHỐI GIỚI THIỆU -->
+      <!-- KHỐI CHIA LAYOUT 3 CỘT: ẢNH - THANH DỌC - NỘI DUNG -->
       <div class="row profile-section">
-        <!-- ẢNH CHÂN DUNG -->
+        <!-- CỘT 1: ẢNH CHÂN DUNG -->
         <div
           class="col-md-5 p-0 d-flex align-items-center justify-content-center"
         >
@@ -132,42 +157,43 @@
           />
         </div>
 
-        <!-- THANH ĐỨNG -->
+        <!-- CỘT 2: THANH DỌC NGĂN CÁCH -->
         <div
           class="col-md-1 d-none d-md-flex align-items-center justify-content-center"
         >
           <div class="separator-line" style="height: 85%"></div>
         </div>
 
-        <!-- NỘI DUNG GIỚI THIỆU -->
+        <!-- CỘT 3: NỘI DUNG GIỚI THIỆU -->
         <div
           class="col-md-6 content-box d-flex flex-column justify-content-center py-5"
         >
           <div class="intro-text-wrapper">
+            <!-- PHẦN GIỚI THIỆU CẢM XÚC -->
             <h2 class="greeting-text">Xin chào, mình là</h2>
             <h1 class="name-title">NGUYỄN VĂN PHƯỚC</h1>
             <p>
-              Có những hành trình không ghi dấu bằng bước chân, mà bằng những
-              lần ta dám thay đổi, dám học hỏi và dám sống thật với chính mình.
-              Đó là hành trình nội tâm – thầm lặng nhưng mạnh mẽ – nơi mỗi ngày
-              trôi qua đều là một lần ta hiểu mình hơn một chút.
+              Trang web này là không gian cá nhân mình tự tay xây dựng — nơi
+              mình lưu giữ hành trình học tập, trải nghiệm và trưởng thành. Mỗi
+              phần trên đây đều phản ánh một góc nhỏ trong bức tranh lớn về con
+              người và ước mơ của mình.
             </p>
 
             <p>
-              Mình tạo blog này để ghi lại những điều từng khiến bản thân tò mò,
-              băn khoăn hay xúc động: từ kiến thức nhỏ nhặt đến suy ngẫm lớn
-              lao, từ câu chuyện cá nhân đến bài học từ người khác. Mỗi dòng
-              viết là một lần mình lắng nghe chính mình – và biết đâu, cũng là
-              cách để lắng nghe bạn.
+              Ở đây, mình chia sẻ những điều đã học được, những dự án đã làm,
+              những nơi từng đi qua, và cả những dòng suy nghĩ rất thật. Không
+              cố gắng hoàn hảo, chỉ mong chân thành. Mình muốn trang web này trở
+              thành nơi để kết nối, truyền cảm hứng và cùng nhau phát triển.
             </p>
 
             <p>
-              “Chúng ta không học để leo lên cao, mà để đào sâu gốc rễ của chính
-              mình” – <i>Carl Jung</i>. Hy vọng nơi đây sẽ là một góc nhỏ bình
-              yên để bạn và mình cùng lớn lên, mỗi ngày một ý nghĩa hơn.
+              Cuộc sống đang chuyển động từng ngày, và mình tin rằng: lưu giữ
+              những điều ý nghĩa sẽ khiến mỗi bước đi thêm vững vàng. Cảm ơn bạn
+              vì đã ghé qua – hy vọng bạn sẽ tìm thấy điều gì đó gần gũi với
+              mình trong từng trang nhỏ này.
             </p>
 
-            <!-- THÔNG TIN CÁ NHÂN -->
+            <!-- THÔNG TIN CÁ NHÂN DƯỚI DẠNG DANH SÁCH -->
             <div class="personal-info-box mt-4">
               <h3 class="info-title mb-3">THÔNG TIN CÁ NHÂN</h3>
               <ul class="list-unstyled info-list">
@@ -191,14 +217,10 @@
         </div>
       </div>
     </div>
+    <!-- ===================================== -->
+    <!-- [PHẦN 4: LIÊN HỆ NHANH] -->
+    <!-- ===================================== -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    <!------------------- PHẦN QUÁ TRÌNH HỌC TẬP------------------- -->
-
-    <!-- Liên hệ -->
     <div class="container text-center py-4">
       <a
         href="https://www.facebook.com/share/15Kbbdbduq/"
@@ -214,10 +236,14 @@
       </a>
     </div>
 
+    <!-- ===================================== -->
+    <!-- [PHẦN 5: FOOTER] -->
+    <!-- ===================================== -->
+
     <footer class="footer-section">
       <div class="container">
         <div class="row align-items-start">
-          <!-- Cột 1: Thông tin cá nhân -->
+          <!-- CỘT 1: THÔNG TIN CÁ NHÂN -->
           <div class="col-md-4 mb-4">
             <div class="profile-info">
               <img
@@ -232,7 +258,7 @@
             </div>
           </div>
 
-          <!-- Cột 2: Liên kết điều hướng -->
+          <!-- CỘT 2: LIÊN KẾT TRANG -->
           <div class="col-md-4 mb-4">
             <div class="links-widget">
               <h4 class="footer-title">Liên kết</h4>
@@ -266,7 +292,7 @@
             </div>
           </div>
 
-          <!-- Cột 3: Thông tin liên hệ -->
+          <!-- CỘT 3: THÔNG TIN LIÊN HỆ -->
           <div class="col-md-4 mb-4">
             <div class="contact-widget">
               <h4 class="footer-title">Kết nối</h4>
@@ -279,7 +305,10 @@
       </div>
     </footer>
 
-    <!-- PHẦN 7: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 6: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH] -->
+    <!-- ===================================== -->
+
     <div class="social-fixed">
       <a href="https://www.facebook.com/share/15Kbbdbduq/"
         ><img src="images/facebook.png" alt="Facebook"
@@ -290,11 +319,23 @@
       <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
     </div>
 
-    <!-- PHẦN 8: COPYRIGHT CUỐI TRANG -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 7: BẢN QUYỀN] -->
+    <!-- ===================================== -->
+
     <div class="footer-copyright">
       © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
     </div>
-    <!-- PHẦN 9: NHÚNG JAVASCRIPT BOOTSTRAP -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 8: NHÚNG JAVASCRIPT] -->
+    <!-- ===================================== -->
+
+    <!-- Bootstrap JS Bundle: Gồm Popper + Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Các file script bổ sung -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

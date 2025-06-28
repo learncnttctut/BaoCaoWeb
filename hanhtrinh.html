@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <!-- PHẦN KHAI BÁO THÔNG TIN TRANG -->
+    <!-- =========================== -->
+    <!-- [PHẦN ĐẦU TRANG] KHAI BÁO -->
+    <!-- =========================== -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hành trình | Nguyễn Văn Phước</title>
 
-    <!-- Nhúng Bootstrap và Google Fonts -->
+    <!-- Bootstrap & Google Fonts -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,18 +18,19 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Nhúng file CSS riêng -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Nhúng Font chữ -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS tùy chỉnh -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- PHẦN 1: THANH ĐIỀU HƯỚNG (NAVBAR) -->
+    <!-- ================================ -->
+    <!-- [PHẦN 1] THANH ĐIỀU HƯỚNG NAVBAR -->
+    <!-- ================================ -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
     >
@@ -69,17 +72,16 @@
       </div>
     </nav>
 
-    <!-- PHẦN 2: ẢNH BANNER ĐẦU TRANG CÓ HIỆU ỨNG RƠI -->
+    <!-- ========================================== -->
+    <!-- [PHẦN 2] ẢNH BANNER ĐẦU TRANG + HIỆU ỨNG RƠI -->
+    <!-- ========================================== -->
     <section class="position-relative" style="height: 1000px; overflow: hidden">
-      <!-- Ảnh banner -->
       <img
         src="images/anhtapthe.jpg"
         alt="Banner của Phước"
         class="img-fluid rounded w-100"
         style="height: 100%; object-fit: cover"
       />
-
-      <!-- LỚP PHỦ HIỆU ỨNG RƠI (trên ảnh) -->
       <div
         class="falling-container"
         style="
@@ -95,10 +97,9 @@
       ></div>
     </section>
 
-    <!-- SCRIPT: TẠO HIỆU ỨNG BÔNG TUYẾT RƠI -->
+    <!-- Script hiệu ứng rơi -->
     <script>
       const container = document.querySelector(".falling-container");
-
       function createSnowflake() {
         const flake = document.createElement("div");
         flake.classList.add("falling-item");
@@ -108,11 +109,12 @@
         container.appendChild(flake);
         setTimeout(() => flake.remove(), 6000);
       }
-
       setInterval(createSnowflake, 300);
     </script>
 
-    <!-- PHẦN 3: HERO SECTION (TIÊU ĐỀ TRANG) -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 3] TIÊU ĐỀ (HERO SECTION)      -->
+    <!-- ===================================== -->
     <div class="hero">
       <h1 class="display-4">HÀNH TRÌNH PHÁT TRIỂN BẢN THÂN</h1>
       <p class="lead">
@@ -121,9 +123,10 @@
       </p>
     </div>
 
-    <!-- PHẦN 4: CÁC THẺ CARD HÀNH TRÌNH -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 4] CÁC THẺ CARD HÀNH TRÌNH     -->
+    <!-- ===================================== -->
     <div class="custom-card-container">
-      <!-- Card 1: Sinh viên 5 tốt -->
       <a href="#" class="custom-card card-sv5t">
         <div>
           <div class="custom-card-title">Sinh viên 5 tốt</div>
@@ -133,8 +136,6 @@
           </div>
         </div>
       </a>
-
-      <!-- Card 2: Lập trình viên -->
       <a href="#" class="custom-card card-ltv">
         <div>
           <div class="custom-card-title">Lập trình viên</div>
@@ -144,8 +145,6 @@
           </div>
         </div>
       </a>
-
-      <!-- Card 3: Thanh niên tiên tiến -->
       <a href="#" class="custom-card card-tntt">
         <div>
           <div class="custom-card-title">Thanh niên tiên tiến</div>
@@ -157,10 +156,11 @@
       </a>
     </div>
 
-    <!-- PHẦN 5: ẢNH CHIA TỶ LỆ 1:3 -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 5] ẢNH CHIA TỶ LỆ 1:3           -->
+    <!-- ===================================== -->
     <div class="container my-5">
       <div class="row">
-        <!-- Ảnh chân dung (1 phần) -->
         <div class="col-md-3">
           <img
             src="images/anhchandung.jpg"
@@ -169,8 +169,6 @@
             style="height: 400px; object-fit: cover"
           />
         </div>
-
-        <!-- Ảnh hoạt động (3 phần) -->
         <div class="col-md-9">
           <img
             src="images/tongket6thang.jpg"
@@ -182,13 +180,15 @@
       </div>
     </div>
 
-    <!-- PHẦN 6: CHÂN TRANG (FOOTER) -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 6] CHÂN TRANG (FOOTER)         -->
+    <!-- ===================================== -->
     <footer class="footer-section">
       <div class="container">
         <div class="row align-items-start">
-          <!-- Cột 1: Thông tin cá nhân -->
+          <!-- Cột: Thông tin cá nhân -->
           <div class="col-md-4 mb-4">
-            <div class="profile-info">
+            <div class="profile-info text-center">
               <img
                 src="images/avatar.jpg"
                 alt="Nguyễn Văn Phước"
@@ -201,7 +201,7 @@
             </div>
           </div>
 
-          <!-- Cột 2: Liên kết điều hướng -->
+          <!-- Cột: Liên kết điều hướng -->
           <div class="col-md-4 mb-4">
             <div class="links-widget">
               <h4 class="footer-title">Liên kết</h4>
@@ -235,7 +235,7 @@
             </div>
           </div>
 
-          <!-- Cột 3: Thông tin liên hệ -->
+          <!-- Cột: Thông tin liên hệ -->
           <div class="col-md-4 mb-4">
             <div class="contact-widget">
               <h4 class="footer-title">Kết nối</h4>
@@ -248,23 +248,31 @@
       </div>
     </footer>
 
-    <!-- PHẦN 7: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 7] ICON MẠNG XÃ HỘI CỐ ĐỊNH   -->
+    <!-- ===================================== -->
     <div class="social-fixed">
-      <a href="https://www.facebook.com/share/15Kbbdbduq/"
-        ><img src="images/facebook.png" alt="Facebook"
-      /></a>
-      <a href="mailto:learncnttctut@gmail.com"
-        ><img src="images/email.png" alt="Email"
-      /></a>
-      <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
+      <a href="https://www.facebook.com/share/15Kbbdbduq/">
+        <img src="images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="mailto:learncnttctut@gmail.com">
+        <img src="images/email.png" alt="Email" />
+      </a>
+      <a href="tel:0333947524">
+        <img src="images/zalo.png" alt="Zalo" />
+      </a>
     </div>
 
-    <!-- PHẦN 8: COPYRIGHT CUỐI TRANG -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 8] COPYRIGHT CUỐI TRANG        -->
+    <!-- ===================================== -->
     <div class="footer-copyright">
       © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
     </div>
 
-    <!-- PHẦN 9: NHÚNG JAVASCRIPT BOOTSTRAP -->
+    <!-- ===================================== -->
+    <!-- [PHẦN 9] NHÚNG BOOTSTRAP SCRIPT JS   -->
+    <!-- ===================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
