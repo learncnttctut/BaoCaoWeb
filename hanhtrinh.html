@@ -2,7 +2,7 @@
 <html lang="vi">
   <head>
     <!-- PHẦN KHAI BÁO THÔNG TIN TRANG -->
-     
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hành trình | Nguyễn Văn Phước</title>
@@ -20,8 +20,10 @@
     <!-- Nhúng file CSS riêng -->
     <link rel="stylesheet" href="style.css" />
     <!-- Nhúng Font chữ -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -52,9 +54,15 @@
                 >Hành trình</a
               >
             </li>
-            <li class="nav-item"><a class="nav-link" href="duan.html">Dự án</a></li>
-            <li class="nav-item"><a class="nav-link" href="khampha.html">Khám phá</a></li>
-            <li class="nav-item"><a class="nav-link" href="ketnoi.html">Kết nối</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="duan.html">Dự án</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="khampha.html">Khám phá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ketnoi.html">Kết nối</a>
+            </li>
           </ul>
           <span class="ms-3 fs-5">🔍</span>
         </div>
@@ -62,54 +70,47 @@
     </nav>
 
     <!-- PHẦN 2: ẢNH BANNER ĐẦU TRANG CÓ HIỆU ỨNG RƠI -->
- 
-<section class="position-relative">
-    <img
-      src="images/anhtapthe.jpg"
-      alt="Banner của Phước"
-      class="img-fluid rounded w-100"
-      style="height: 400px; object-fit: cover"
-    />
-    <!-- Nền hiệu ứng tuyết -->
-    <div class="falling-container"></div>
-  </section>
+    <section class="position-relative" style="height: 400px; overflow: hidden">
+      <!-- Ảnh banner -->
+      <img
+        src="images/anhtapthe.jpg"
+        alt="Banner của Phước"
+        class="img-fluid rounded w-100"
+        style="height: 100%; object-fit: cover"
+      />
 
-
-    <!-- LỚP PHỦ HIỆU ỨNG RƠI -->
-          <div
-            class="falling-container"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              z-index: 2;
-              pointer-events: none;
-              overflow: hidden;
-            "
-          ></div>
-        </div>
-      </div>
+      <!-- LỚP PHỦ HIỆU ỨNG RƠI (trên ảnh) -->
+      <div
+        class="falling-container"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+          overflow: hidden;
+        "
+      ></div>
     </section>
 
     <!-- SCRIPT: TẠO HIỆU ỨNG BÔNG TUYẾT RƠI -->
     <script>
-        const container = document.querySelector(".falling-container");
-      
-        function createSnowflake() {
-          const flake = document.createElement("div");
-          flake.classList.add("falling-item");
-          flake.textContent = "❄";
-          flake.style.left = Math.random() * window.innerWidth + "px";
-          flake.style.fontSize = (16 + Math.random() * 16) + "px";
-          container.appendChild(flake);
-          setTimeout(() => flake.remove(), 6000);
-        }
-      
-        setInterval(createSnowflake, 300);
-      </script>
-      
+      const container = document.querySelector(".falling-container");
+
+      function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.classList.add("falling-item");
+        flake.textContent = "❄";
+        flake.style.left = Math.random() * window.innerWidth + "px";
+        flake.style.fontSize = 16 + Math.random() * 16 + "px";
+        container.appendChild(flake);
+        setTimeout(() => flake.remove(), 6000);
+      }
+
+      setInterval(createSnowflake, 300);
+    </script>
 
     <!-- PHẦN 3: HERO SECTION (TIÊU ĐỀ TRANG) -->
     <div class="hero">
@@ -197,7 +198,7 @@
             </div>
           </div>
 
-         <!-- Cột 2: Liên kết điều hướng -->
+          <!-- Cột 2: Liên kết điều hướng -->
           <div class="col-md-4 mb-4">
             <div class="links-widget">
               <h4 class="footer-title">Liên kết</h4>
