@@ -9,13 +9,15 @@
   - `margin: 0;` và `padding: 0;` để loại bỏ khoảng trắng mặc định của trình duyệt.
 */
 body {
-  font-family: "Segoe UI", "Roboto", sans-serif; /* Ngăn xếp font chữ chính */
-  font-size: 16px; /* Cỡ chữ cơ bản */
-  color: #333; /* Màu chữ chính */
-  background-color: #f8f9fa; /* Màu nền xám nhạt */
+  font-family: "Georgia", "Segoe UI", serif;
+  font-size: 17px;
+  color: #444;
+  background-color: #fefcf9; /* Màu nền ngả kem dễ đọc */
+  line-height: 1.7;
   margin: 0;
   padding: 0;
 }
+
 /* ========== NAVBAR CƠ BẢN ========== */
 
 /* Chiều cao tổng thể navbar */
@@ -144,68 +146,167 @@ body {
   padding-top: 120px; /* Khoảng cách trên lớn */
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng mềm mại tạo chiều sâu */
 }
-
-/* Khối thông tin cá nhân trong footer */
-.footer-section .profile-info {
-  text-align: center; /* Căn giữa toàn bộ nội dung */
-}
-
-/* Ảnh đại diện trong footer */
-.footer-section .profile-info img {
-  max-width: 250px; /* Chiều rộng tối đa của ảnh */
-  border-radius: 50%; /* Biến ảnh thành hình tròn */
-  margin-bottom: 1rem;
-  transform: translateY(-80px); /* Nâng ảnh lên khỏi vị trí ban đầu */
-}
-
-/* Kiểu chữ cho tên và tagline */
-.footer-section .profile-info h5 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: -60px; /* Kéo tên lên gần ảnh */
-}
-
-.footer-section .profile-info .tagline {
-  font-size: 16px;
-  color: #6c757d;
-  margin-bottom: 100px;
-}
-
-/* Tiêu đề cho mỗi cột trong footer */
-.footer-section .footer-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  border-bottom: 2px ridge #f9f9f9f9; /* Tạo đường gạch bên dưới tiêu đề */
-  padding-bottom: 10px;
-}
-
-/* Danh sách các liên kết trong footer */
-.footer-section .link-list li {
-  margin-bottom: 8px; /* Khoảng cách giữa các liên kết */
-  list-style: none; /* Bỏ dấu chấm mặc định */
-}
-
-.footer-section .link-list a {
-  font-size: 16px;
+/* -------------------- Khối thông tin cá nhân trong footer ----------------------- */
+.footer-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  border-top: 2px solid #dee2e6;
   color: #212529;
-  text-decoration: none; /* Bỏ gạch chân */
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
-.footer-section .link-list a:hover {
-  text-decoration: underline; /* Thêm gạch chân khi di chuột */
+/* Container căn giữa nội dung, giới hạn max-width */
+.footer-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Khối thông tin liên hệ */
-.footer-section .contact-widget p {
-  font-size: 16px;
-  margin-bottom: 8px;
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+/* Row footer - tạo flex, căn đều, thêm khoảng cách */
+/* Bổ sung flex-wrap: nowrap để 3 cột không xuống hàng */
+.footer-section .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0 30px;
+  flex-wrap: nowrap; /* KHÔNG cho xuống dòng */
 }
 
-.footer-section .contact-widget strong {
-  font-weight: 600; /* Chữ đậm cho các nhãn như "Email:" */
+/* Giữ cột có kích thước hợp lý để nằm ngang */
+.footer-section .col {
+  flex: 1 1 30%; /* mỗi cột chiếm khoảng 30% */
+  min-width: 280px; /* tối thiểu rộng 280px */
+  box-sizing: border-box;
+}
+
+/* Căn giữa profile info */
+.footer-section .profile-info {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Ảnh đại diện */
+.footer-section .profile-info img {
+  max-width: 180px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-40px);
+  transition: transform 0.3s ease;
+}
+.footer-section .profile-info img:hover {
+  transform: translateY(-45px) scale(1.05);
+}
+
+/* Tên */
+.footer-section .profile-info h5 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  color: #1a237e;
+  letter-spacing: 0.03em;
+}
+
+/* Tagline */
+.footer-section .profile-info .tagline {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Tiêu đề cột */
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a237e;
+  border-bottom: 3px ridge #cfd8dc;
+  padding-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* Danh sách liên kết */
+.link-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.link-list li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.link-list a {
+  font-size: 17px;
+  color: #212529;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+  font-weight: 500;
+}
+
+.link-list a:hover,
+.link-list a:focus {
+  color: #0d6efd;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Cột liên hệ */
+.contact-widget p {
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Thanh đứng phân cách giữa các cột */
+.separator {
+  border-left: 2px solid #dee2e6;
+  height: auto;
+  min-height: 180px;
+  margin: 0 30px;
+  flex-shrink: 0; /* không cho separator co lại */
+  width: 2px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .footer-section .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section .footer-title {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .footer-section .profile-info h5 {
+    font-size: 24px;
+  }
+
+  .footer-section .profile-info .tagline {
+    font-size: 16px;
+  }
+
+  .link-list a,
+  .contact-widget p {
+    font-size: 16px;
+  }
+
+  .footer-section .col {
+    min-width: 100%;
+  }
 }
 
 /* --- ICON MẠNG XÃ HỘI CỐ ĐỊNH --- */
@@ -485,6 +586,127 @@ body {
     margin-bottom: 4px;
   }
 }
+
+/* =============================== */
+/* KHỐI QUÁ TRÌNH PHẤN ĐẤU VÀ RÈN LUYỆN */
+/* =============================== */
+.struggle-container {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+  position: relative;
+}
+
+.struggle-section {
+  background-color: #ffffffee;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.struggle-img-full {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.struggle-img-full:hover {
+  transform: scale(1.04);
+}
+
+.content-box {
+  padding: 40px 30px;
+}
+
+.struggle-greeting {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+.struggle-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a237e;
+  margin-bottom: 25px;
+}
+
+.achievements-list {
+  font-size: 1.1rem;
+  line-height: 2.2;
+  list-style: none;
+  padding-left: 30px;
+  border-left: 3px solid #1a237e;
+  position: relative;
+}
+
+.achievements-list li {
+  position: relative;
+  padding: 15px 0 15px 20px;
+  font-weight: 500;
+}
+
+.achievements-list li::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #1a237e;
+  border-radius: 50%;
+  border: 3px solid white;
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px rgba(26, 35, 126, 0.6);
+}
+
+.achievement-label {
+  font-weight: bold;
+  color: #1a237e;
+  margin-right: 8px;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .struggle-section {
+    flex-direction: column-reverse;
+  }
+
+  .content-box {
+    padding: 30px 20px;
+  }
+
+  .struggle-title {
+    font-size: 2rem;
+  }
+
+  .struggle-greeting {
+    font-size: 1.2rem;
+  }
+
+  .achievements-list {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .achievements-list li::before {
+    left: 0;
+  }
+}
 /* ========================================================================== */
 /* STYLE CHO TRANG HÀNH TRÌNH (hanhtrinh.html)                              */
 /* ========================================================================== */
@@ -669,30 +891,185 @@ body {
 /* STYLE CHO TRANG KẾT NỐI (ketnoi.html)                                 */
 /* ========================================================================== */
 
-/* --- PHẦN LIÊN HỆ --- */
-/*
-  - Định dạng container cho form và thông tin liên hệ.
-  - Sử dụng flexbox để căn giữa nội dung theo cả chiều dọc và ngang.
-*/
+/* ============================== */
+/* PHẦN LIÊN HỆ - STYLE HOÀN HỈNH & CHUYÊN NGHIỆP */
+/* ============================== */
+
+/* Main container for the contact section */
 .contact-section {
-  min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao viewport */
-  display: flex;
-  align-items: center; /* Căn giữa theo chiều dọc */
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  background-color: #f9f9f9;
-  padding: 60px 15px;
+  width: 100vw; /* Chiều rộng tràn màn hình */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+  /* Điều chỉnh padding để cân đối hơn trên màn hình lớn */
+  padding: 100px 30px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  color: #333;
+  /* Thêm hiệu ứng transition cho màu nền */
+  transition: background 0.5s ease;
 }
 
-/* --- THẺ LIÊN HỆ --- */
-/*
-  - Khung bọc cho nội dung liên hệ.
-  - `box-shadow` tạo hiệu ứng nổi.
-*/
+/* The main card containing contact info and form */
 .contact-card {
-  width: 100%;
-  max-width: 900px;
+  background: #fff;
+  border-radius: 24px; /* Bo góc mạnh hơn, trông hiện đại hơn */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Đổ bóng sắc nét hơn */
+  /* Tăng padding để nội dung có không gian thở */
+  padding: 50px 70px;
+  width: 90%; /* Chiếm 90% chiều rộng của container */
+  max-width: 1100px; /* Giới hạn chiều rộng tối đa */
   margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  box-sizing: border-box;
+  /* Thêm hiệu ứng chuyển động khi hover */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s ease;
+}
+
+/* Hover effect for the contact card */
+.contact-card:hover {
+  transform: translateY(-8px); /* Nhấc thẻ lên cao hơn một chút */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn, tạo hiệu ứng nổi bật */
+}
+
+/* Styling for main titles */
+.contact-section h3 {
+  font-size: 2.8rem; /* Tăng cỡ chữ lên 2.8rem */
+  font-weight: 700; /* Dùng font-weight đậm hơn */
+  color: #1a237e; /* Màu chữ chính */
+  margin-bottom: 25px;
+}
+
+/* Styling for subtitles */
+.contact-section h5 {
+  font-size: 1.6rem; /* Điều chỉnh cỡ chữ phụ */
+  font-weight: 600;
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Styling for paragraphs, list items, and form labels */
+.contact-info p,
+.contact-info li,
+.contact-form .form-label {
+  font-size: 1.15rem; /* Điều chỉnh kích thước chữ hợp lý hơn */
+  line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc */
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Styling for social links and other anchors */
+.contact-info a {
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Để hiệu ứng transform hoạt động */
+}
+
+.contact-info a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+  transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ khi hover */
+}
+
+.contact-info .social-links {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.contact-info .social-links li {
+  margin-bottom: 12px;
+}
+
+/* Styling for form input fields */
+.contact-form .form-control {
+  font-size: 1.1rem;
+  padding: 1rem 1.2rem; /* Tăng padding để input trông to và dễ click hơn */
+  border: 2px solid #e0e0e0; /* Viền dày hơn và màu nhạt hơn */
+  border-radius: 12px; /* Bo góc mạnh hơn */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+}
+
+/* Focus effect for input fields */
+.contact-form .form-control:focus {
+  border-color: #0d6efd;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15); /* Hiệu ứng glow tinh tế hơn */
+  outline: none; /* Bỏ viền outline mặc định của trình duyệt */
+}
+
+/* Styling for the submit button */
+.btn-primary {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 14px 30px; /* Tăng padding cho nút */
+  border-radius: 50px; /* Bo tròn hoàn toàn */
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.btn-primary:hover {
+  transform: translateY(-4px); /* Nâng nút lên cao hơn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn */
+  background-color: #0b5ed7; /* Đổi màu nền khi hover */
+}
+
+/* Separator line style */
+.separator {
+  border-left: 2px solid #e0e0e0;
+  height: 100%;
+  width: 1px;
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES FOR MOBILE DEVICES */
+/* ============================== */
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 60px 15px; /* Giảm padding trên tablet */
+  }
+  .contact-card {
+    padding: 35px 30px; /* Giảm padding thẻ trên tablet */
+    width: 95%;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .separator {
+    display: none;
+  }
+  .contact-card {
+    padding: 30px 20px; /* Giảm padding trên điện thoại */
+  }
+  .contact-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .contact-section h5 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+  }
+  .contact-info p,
+  .contact-info li,
+  .contact-form .form-label,
+  .contact-form .form-control {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .contact-form .form-control {
+    padding: 0.8rem 1rem;
+  }
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+  }
 }

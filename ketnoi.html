@@ -31,6 +31,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+        <!-- icon mạng xã hội -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- File CSS tùy chỉnh riêng -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
@@ -105,78 +108,81 @@
     if (isHidden) searchInput.focus();
   });
 </script>
-
     </nav>
-    <!-- PHẦN LIÊN HỆ -->
-    <section class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="fw-bold">Liên hệ với tôi</h2>
-          <p class="text-muted">
-            Gửi tin nhắn nếu bạn muốn hợp tác hoặc cần hỗ trợ.
-          </p>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <form id="contactForm" novalidate>
-              <div class="mb-3">
-                <label for="name" class="form-label">Họ và tên</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  name="name"
-                  required
-                />
-                <div class="invalid-feedback">Vui lòng nhập tên.</div>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  required
-                />
-                <div class="invalid-feedback">Email không hợp lệ.</div>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Nội dung</label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                ></textarea>
-                <div class="invalid-feedback">Vui lòng nhập nội dung.</div>
-              </div>
-              <button
-                type="submit"
-                id="submitButton"
-                class="btn btn-primary px-4"
-              >
-                <span class="btn-text">Gửi</span>
-                <span
-                  id="spinner"
-                  class="spinner-border spinner-border-sm ms-2 hidden"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-              </button>
-            </form>
 
-            <div
-              id="successMessage"
-              class="alert alert-success mt-4 text-center hidden"
-            >
-              ✅ Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể!
-            </div>
-          </div>
-        </div>
+
+<!-- PHẦN LIÊN HỆ -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-card row">
+      <!-- Cột trái: Thông tin cá nhân -->
+      <div class="col-md-5 contact-info pe-md-5">
+        <h3 class="fw-bold text-primary mb-4">Thông tin liên hệ</h3>
+        <p><strong>👤 Họ tên:</strong> Nguyễn Văn Phước</p>
+        <p><strong>📧 Email:</strong> learncnttctut@gmail.com</p>
+        <p><strong>📞 Số điện thoại:</strong> 0333947524</p>
+        <p><strong>📍 Địa chỉ:</strong> Cần Thơ, Việt Nam</p>
+
+<h5>Kết nối với tôi</h5>
+<ul class="social-links">
+  <li><a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+  <li><a href="https://zalo.me/yourzaloid" target="_blank"><i class="fas fa-phone"></i> Zalo</a></li>
+  <li><a href="mailto:yourmail@gmail.com"><i class="fas fa-envelope"></i> Gmail</a></li>
+  <li><a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+</ul>
+
+        
       </div>
-    </section>
+
+      <!-- Đường kẻ phân cách -->
+      <div class="col-md-1 d-none d-md-flex justify-content-center">
+        <div class="separator"></div>
+      </div>
+
+      <!-- Cột phải: Form -->
+      <div class="col-md-6 contact-form ps-md-5 mt-5 mt-md-0">
+        <h3 class="fw-bold text-primary mb-4">Liên hệ với tôi</h3>
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Họ và tên</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Nội dung</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary px-4">
+            Gửi
+            <span class="spinner-border spinner-border-sm ms-2 d-none" id="spinner"></span>
+          </button>
+          <div id="successMessage" class="alert alert-success mt-3 d-none">
+            ✅ Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể!
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const spinner = document.getElementById("spinner");
+    const message = document.getElementById("successMessage");
+    spinner.classList.remove("d-none");
+    setTimeout(() => {
+      spinner.classList.add("d-none");
+      message.classList.remove("d-none");
+      this.reset();
+    }, 1500);
+  });
+</script>
+
 
     <footer class="footer-section">
       <div class="container">
