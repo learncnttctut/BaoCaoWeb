@@ -1,167 +1,321 @@
-/* ---------------- PHẦN CSS CỦA TRANG HTML INDEX -----------------------  */
-
 /* ========================================================================== */
-/* BỔ SUNG: STYLE CHO TRANG GIỚI THIỆU BẢN THÂN (NEW STYLES) */
+/* STYLE TOÀN CỤC (ÁP DỤNG CHO TẤT CẢ CÁC TRANG)                 */
 /* ========================================================================== */
 
-/* === FONT VÀ MÀU TOÀN CỤC === */
+/* === CÀI ĐẶT FONT VÀ MÀU SẮC TOÀN TRANG === */
+/*
+  - Thiết lập font chữ mặc định, cỡ chữ và màu nền cho toàn bộ trang web.
+  - Sử dụng font "Segoe UI", "Roboto" và sans-serif để đảm bảo hiển thị đẹp trên nhiều hệ điều hành.
+  - `margin: 0;` và `padding: 0;` để loại bỏ khoảng trắng mặc định của trình duyệt.
+*/
 body {
-  font-family: "Segoe UI", "Roboto", sans-serif;
-  font-size: 16px;
-  color: #333;
-  background-color: #f8f9fa;
-}
-
-/* === FONT CHUNG VÀ CÀI ĐẶT TOÀN TRANG === */
-body {
-  font-family: "Segoe UI", "Roboto", sans-serif;
-  font-size: 16px;
-  color: #333;
-  background-color: #f8f9fa;
+  font-family: "Segoe UI", "Roboto", sans-serif; /* Ngăn xếp font chữ chính */
+  font-size: 16px; /* Cỡ chữ cơ bản */
+  color: #333; /* Màu chữ chính */
+  background-color: #f8f9fa; /* Màu nền xám nhạt */
   margin: 0;
   padding: 0;
 }
 
-/* === TIÊU ĐỀ === */
+/* --- TIÊU ĐỀ CHUNG CHO CÁC PHẦN --- */
+/*
+  - Định dạng nhất quán cho các tiêu đề lớn như "Giới thiệu" và "Hành trình".
+  - Sử dụng font đậm, màu xanh nổi bật và hiệu ứng gạch chân.
+  - Pseudo-element `::after` tạo ra một đường gạch chân nhỏ, có màu tương ứng với tiêu đề.
+*/
 .header-title h1 {
-  font-weight: 800;
-  color: #0d47a1;
-  text-transform: uppercase;
-  font-size: 2.8rem;
-  letter-spacing: 1px;
-  position: relative;
+  font-weight: 800; /* Độ đậm của font */
+  color: #0d6efd; /* Màu xanh đậm của tiêu đề */
+  text-transform: uppercase; /* Chuyển thành chữ in hoa */
+  font-size: 2.8rem; /* Kích thước chữ lớn */
+  letter-spacing: 1px; /* Khoảng cách giữa các ký tự */
+  position: relative; /* Cần thiết để định vị pseudo-element `::after` */
 }
 
+/* Hiệu ứng gạch chân dưới tiêu đề */
 .header-title h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: #0d47a1;
-  margin: 12px auto 0;
-  border-radius: 3px;
+  content: ""; /* Bắt buộc phải có để hiển thị */
+  display: block; /* Hiển thị dưới dạng khối để kiểm soát kích thước */
+  width: 60px; /* Chiều rộng của đường gạch */
+  height: 4px; /* Chiều cao của đường gạch */
+  background-color: #0d6efd; /* Màu của đường gạch */
+  margin: 12px auto 0; /* Căn giữa đường gạch theo chiều ngang */
+  border-radius: 3px; /* Bo tròn góc */
 }
 
-/* === KHỐI GIỚI THIỆU === */
+/* --- LỚP TIỆN ÍCH: ẨN PHẦN TỬ --- */
+/*
+  - Lớp tiện ích để ẩn một phần tử HTML.
+*/
+.hidden {
+  display: none;
+}
+
+/* --- PHẦN CHÂN TRANG CHÍNH (FOOTER) --- */
+/*
+  - Định dạng phần chân trang, xuất hiện trên tất cả các trang.
+  - Sử dụng `padding-top` lớn để tạo không gian cho ảnh đại diện.
+*/
+.footer-section {
+  font-family: "Segoe UI Light", "Helvetica Neue Light", "Roboto Light",
+    sans-serif;
+  font-weight: 400; /* Độ đậm nhẹ */
+  font-size: 16px;
+  color: #333;
+  background-color: #f8f9fa;
+  padding-top: 120px; /* Khoảng cách trên lớn */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng mềm mại tạo chiều sâu */
+}
+
+/* Khối thông tin cá nhân trong footer */
+.footer-section .profile-info {
+  text-align: center; /* Căn giữa toàn bộ nội dung */
+}
+
+/* Ảnh đại diện trong footer */
+.footer-section .profile-info img {
+  max-width: 250px; /* Chiều rộng tối đa của ảnh */
+  border-radius: 50%; /* Biến ảnh thành hình tròn */
+  margin-bottom: 1rem;
+  transform: translateY(-80px); /* Nâng ảnh lên khỏi vị trí ban đầu */
+}
+
+/* Kiểu chữ cho tên và tagline */
+.footer-section .profile-info h5 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: -60px; /* Kéo tên lên gần ảnh */
+}
+
+.footer-section .profile-info .tagline {
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 100px;
+}
+
+/* Tiêu đề cho mỗi cột trong footer */
+.footer-section .footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px ridge #f9f9f9f9; /* Tạo đường gạch bên dưới tiêu đề */
+  padding-bottom: 10px;
+}
+
+/* Danh sách các liên kết trong footer */
+.footer-section .link-list li {
+  margin-bottom: 8px; /* Khoảng cách giữa các liên kết */
+  list-style: none; /* Bỏ dấu chấm mặc định */
+}
+
+.footer-section .link-list a {
+  font-size: 16px;
+  color: #212529;
+  text-decoration: none; /* Bỏ gạch chân */
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.footer-section .link-list a:hover {
+  text-decoration: underline; /* Thêm gạch chân khi di chuột */
+}
+
+/* Khối thông tin liên hệ */
+.footer-section .contact-widget p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.footer-section .contact-widget strong {
+  font-weight: 600; /* Chữ đậm cho các nhãn như "Email:" */
+}
+
+/* --- ICON MẠNG XÃ HỘI CỐ ĐỊNH --- */
+/*
+  - Tạo một khối icon mạng xã hội cố định ở góc dưới bên phải màn hình.
+  - `position: fixed` giúp khối này không cuộn theo trang.
+*/
+.social-fixed {
+  position: fixed; /* Cố định vị trí trên màn hình */
+  bottom: 65px; /* Cách mép dưới 65px */
+  right: 20px; /* Cách mép phải 20px */
+  display: flex; /* Sử dụng flexbox để sắp xếp */
+  flex-direction: column; /* Sắp xếp icon theo chiều dọc */
+  gap: 12px; /* Khoảng cách giữa các icon */
+  z-index: 9999; /* Đảm bảo icon luôn nằm trên cùng */
+}
+
+/* Định dạng cho ảnh icon */
+.social-fixed a img {
+  width: 44px; /* Chiều rộng icon */
+  height: 44px; /* Chiều cao icon */
+  border-radius: 50%; /* Biến ảnh thành hình tròn */
+  object-fit: cover; /* Đảm bảo ảnh lấp đầy khung mà không bị méo */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt */
+  background-color: white; /* Nền trắng phía sau icon */
+}
+
+/* Hiệu ứng khi di chuột vào icon */
+.social-fixed a img:hover {
+  transform: scale(1.1); /* Phóng to nhẹ icon */
+}
+
+/* --- DÒNG BẢN QUYỀN --- */
+.footer-copyright {
+  background-color: #0d47a1;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 15px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  margin-top: 0;
+}
+/* ========================================================================== */
+/* STYLE CHO TRANG GIỚI THIỆU BẢN THÂN (INDEX.HTML)             */
+/* ========================================================================== */
+
+/* --- HIỆU ỨNG RƠI (CHO BANNER) --- */
+/*
+  - Định nghĩa keyframes cho animation "fall" của các biểu tượng trên banner.
+  - `to` xác định trạng thái cuối của animation: dịch chuyển xuống và xoay.
+*/
+@keyframes fall {
+  to {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Container chứa các biểu tượng rơi */
+.falling-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none; /* Không chặn click chuột */
+  overflow: hidden; /* Ẩn các phần tử tràn ra ngoài */
+}
+
+/* Định dạng cho mỗi biểu tượng rơi */
+.falling-item {
+  position: absolute;
+  top: -40px; /* Bắt đầu từ phía trên */
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  animation: fall 6s linear forwards; /* Áp dụng animation */
+  user-select: none;
+}
+
+/* --- KHỐI GIỚI THIỆU BẢN THÂN --- */
+/*
+  - Khối chứa ảnh chân dung và thông tin.
+  - Sử dụng flexbox để căn chỉnh nội dung dễ dàng.
+  - `box-shadow` tạo hiệu ứng nổi.
+*/
 .profile-section {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  display: flex;
-  overflow: hidden;
+  background-color: #fff; /* Nền trắng */
+  border-radius: 15px; /* Bo tròn góc */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Hiệu ứng đổ bóng */
+  display: flex; /* Sử dụng flexbox */
+  overflow: hidden; /* Ẩn nội dung tràn */
   margin-bottom: 40px;
 }
 
-/* === ẢNH CÂN ĐỐI === */
-.portrait-img-full {
-  max-height: 360px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 15px;
-  box-shadow: inset 0 0 0 6px #fff;
-  transition: transform 0.4s ease;
-}
-
-.portrait-img-full:hover {
-  transform: scale(1.02);
-}
-
-/* === THANH TRANG TRÍ === */
+/* --- THANH TRANG TRÍ DỌC --- */
+/*
+  - Thanh trang trí dùng để phân cách các khu vực nội dung.
+  - `linear-gradient` tạo hiệu ứng chuyển màu từ đậm sang nhạt.
+*/
 .separator-line {
-  width: 4px;
-  background: linear-gradient(to bottom, #0d47a1, #1976d2);
-  border-radius: 6px;
+  width: 4px; /* Chiều rộng của thanh */
+  background: linear-gradient(
+    to bottom,
+    #0d47a1,
+    #1976d2
+  ); /* Hiệu ứng màu chuyển */
+  border-radius: 6px; /* Bo tròn góc */
   margin: 40px 0;
 }
 
-/* TIÊU ĐỀ */
-.header-title h1 {
-  font-weight: 800;
-  color: #0d47a1;
-  text-transform: uppercase;
-  font-size: 2.8rem;
-  letter-spacing: 1px;
-  position: relative;
-}
-.header-title h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: #0d47a1;
-  margin: 12px auto 0;
-  border-radius: 3px;
-}
-
-/* KHỐI GIỚI THIỆU */
-.profile-section {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  display: flex;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
-
-/* ẢNH CHÂN DUNG TO VỪA PHẢI */
+/* --- ẢNH CHÂN DUNG CỠ LỚN --- */
+/*
+  - Định dạng ảnh chân dung với kích thước tối đa và hiệu ứng hover.
+  - `object-fit: contain` đảm bảo ảnh không bị méo.
+  - `box-shadow: inset` tạo khung viền trắng bên trong ảnh.
+*/
 .portrait-img-full {
   width: auto;
-  max-height: 500px; /* 🔵 tăng chiều cao hơn nữa */
+  max-height: 500px; /* Chiều cao tối đa */
   object-fit: contain;
   border-radius: 15px;
-  box-shadow: inset 0 0 0 6px #fff;
-  transition: transform 0.4s ease;
+  box-shadow: inset 0 0 0 6px #fff; /* Viền trắng bên trong */
+  transition: transform 0.4s ease; /* Hiệu ứng chuyển động mượt */
 }
+
+/* Hiệu ứng khi di chuột vào ảnh */
 .portrait-img-full:hover {
-  transform: scale(1.025); /* hiệu ứng nhẹ khi hover */
+  transform: scale(1.025); /* Phóng to nhẹ ảnh */
 }
 
-/* THANH ĐỨNG */
-.separator-line {
-  width: 4px;
-  background: linear-gradient(to bottom, #0d47a1, #1976d2);
-  border-radius: 6px;
-  margin: 40px 0;
-}
-
-/* PHẦN NỘI DUNG */
+/* --- PHẦN NỘI DUNG VĂN BẢN --- */
+/*
+  - Định dạng khối chứa văn bản giới thiệu và thông tin cá nhân.
+*/
 .content-box {
   padding-left: 40px;
   padding-right: 30px;
   background-color: #fff;
 }
+
+/* Lớp bọc nội dung giới thiệu */
 .intro-text-wrapper {
   padding-right: 10px;
 }
+
+/* Chữ chào hỏi */
 .greeting-text {
   font-weight: 600;
   color: #1b2a4e;
   font-size: 1.7rem;
   margin-bottom: 10px;
 }
+
+/* Tên chính */
 .name-title {
   font-size: 3.2rem;
   font-weight: 800;
-  color: #1976d2;
+  color: #0d47a1;
   margin-bottom: 20px;
 }
+
+/* Đoạn văn giới thiệu */
 .intro-text-wrapper p {
   font-size: 1.15rem;
-  line-height: 1.85;
+  line-height: 1.85; /* Khoảng cách dòng */
   color: #4f4f4f;
   margin-bottom: 16px;
 }
 
-/* THÔNG TIN CÁ NHÂN */
+/* --- DANH SÁCH THÔNG TIN CÁ NHÂN --- */
+/*
+  - Định dạng tiêu đề và danh sách thông tin cá nhân.
+  - `::before` tạo chấm tròn trang trí trước tiêu đề.
+*/
 .info-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: #0d47a1;
   margin-bottom: 20px;
-  padding-left: 20px;
+  padding-left: 20px; /* Tạo khoảng trống cho chấm tròn */
   position: relative;
 }
+
+/* Chấm tròn trang trí trước tiêu đề */
 .info-title::before {
   content: "";
   position: absolute;
@@ -170,57 +324,74 @@ body {
   width: 10px;
   height: 10px;
   background-color: #0d47a1;
-  border-radius: 50%;
-  transform: translateY(-50%);
+  border-radius: 50%; /* Biến thành hình tròn */
+  transform: translateY(-50%); /* Căn giữa theo chiều dọc */
 }
+
+/* Danh sách thông tin */
 .info-list {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.8;
-  list-style: none;
+  list-style: none; /* Bỏ dấu chấm mặc định */
   padding: 0;
   margin: 0;
 }
+
+/* Các mục trong danh sách */
 .info-list li {
   padding: 6px 0;
-  border-bottom: 1px dashed #ddd;
+  border-bottom: 1px dashed #ddd; /* Đường gạch đứt phân cách */
 }
+
+/* Xóa đường gạch ở mục cuối cùng */
 .info-list li:last-child {
   border-bottom: none;
 }
+
+/* Nhãn của thông tin */
 .info-label {
   font-weight: 600;
   color: #333;
   display: inline-block;
-  width: 180px;
+  width: 180px; /* Cố định chiều rộng nhãn để căn chỉnh */
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE CHO TRANG GIỚI THIỆU --- */
+/*
+  - Điều chỉnh layout khi xem trên thiết bị di động (màn hình nhỏ hơn 768px).
+  - Flexbox chuyển từ hàng ngang sang cột dọc.
+*/
 @media (max-width: 768px) {
   .profile-section {
-    flex-direction: column;
+    flex-direction: column; /* Chuyển thành cột */
   }
 
+  /* Ảnh chân dung chiếm toàn bộ chiều rộng */
   .portrait-img-full {
     width: 100%;
     height: auto;
     max-height: none;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0; /* Bo tròn chỉ hai góc trên */
   }
 
+  /* Ẩn thanh trang trí dọc */
   .separator-line {
     display: none;
   }
 
+  /* Điều chỉnh padding cho nội dung */
   .content-box {
     padding: 30px 20px;
   }
 
+  /* Căn giữa nội dung khi xem trên điện thoại */
   .intro-text-wrapper {
     padding: 0;
     text-align: center;
   }
 
+  /* Giảm kích thước font */
   .name-title {
     font-size: 2.4rem;
   }
@@ -229,18 +400,21 @@ body {
     font-size: 1.4rem;
   }
 
+  /* Nhãn thông tin chiếm toàn bộ chiều rộng */
   .info-label {
     width: 100%;
     display: block;
     margin-bottom: 4px;
   }
 }
+/* ========================================================================== */
+/* STYLE CHO TRANG HÀNH TRÌNH (hanhtrinh.html)                              */
+/* ========================================================================== */
 
-/* === ------------------------- QUÁ TRÌNH HỌC TẬP------------------ === */
-
-/* ===================================== */
-/* [PHẦN CSS: HERO - HÀNH TRÌNH] */
-/* ===================================== */
+/* === PHẦN HERO (BANNER ĐẦU TRANG) === */
+/*
+  - Banner giới thiệu ở đầu trang.
+*/
 .hero {
   padding: 100px 20px 80px;
   text-align: center;
@@ -264,16 +438,21 @@ body {
   color: #555;
 }
 
-/* === PHẦN 4: Card Section (Các mục hành trình) === */
+/* === KHỐI THẺ (CARD SECTION) === */
+/*
+  - Hiển thị các cột mốc hành trình dưới dạng thẻ (card).
+  - Sử dụng flexbox để sắp xếp các thẻ một cách linh hoạt.
+*/
 .custom-card-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  gap: 24px; /* Khoảng cách giữa các thẻ */
+  justify-content: center; /* Căn giữa các thẻ theo chiều ngang */
   padding: 40px 0;
   background-color: #f9f9f9;
 }
 
+/* Định dạng từng thẻ card */
 .custom-card {
   width: 350px;
   height: 200px;
@@ -284,16 +463,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng di chuyển mượt mà */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .custom-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Tiêu đề và nội dung của thẻ */
 .custom-card-title {
   font-size: 25px;
   font-weight: bold;
@@ -305,6 +486,10 @@ body {
   line-height: 1.25;
 }
 
+/* --- MÀU NỀN RIÊNG CHO TỪNG LOẠI THẺ --- */
+/*
+  - Sử dụng `linear-gradient` để tạo hiệu ứng màu chuyển cho mỗi thẻ.
+*/
 .card-sv5t {
   background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
 }
@@ -316,204 +501,15 @@ body {
 .card-tntt {
   background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
+/* ========================================================================== */
+/* STYLE CHO TRANG DỰ ÁN (duan.html)                                  */
+/* ========================================================================== */
 
-/* === PHẦN 6: Footer Section (Chân trang) === */
-/* === PHẦN CHÂN TRANG (FOOTER) CHÍNH === */
-.footer-section {
-  /* Font nhẹ, hiện đại dùng cho toàn bộ footer */
-  font-family: "Segoe UI Light", "Helvetica Neue Light", "Roboto Light",
-    sans-serif;
-  font-weight: 400;
-  /* Light */
-  font-size: 16px;
-  /* Cỡ chữ mặc định */
-  color: #333;
-  /* Màu chữ xám đậm */
-  background-color: #f8f9fa;
-  /* Nền xám nhạt gần trắng */
-  padding-top: 120px;
-  /* Khoảng cách phía trên nội dung (48px) */
-  /* Đổ bóng mềm toàn vùng footer */
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* === PHẦN 1: THÔNG TIN CÁ NHÂN (ẢNH + TÊN + MÔ TẢ NGẮN) === */
-.footer-section .profile-info {
-  text-align: center;
-  /* Căn giữa toàn bộ nội dung */
-}
-
-.footer-section .profile-info img {
-  max-width: 250px;
-  /* Chiều rộng tối đa ảnh đại diện */
-  border-radius: 50%;
-  /* Bo tròn ảnh thành hình tròn */
-  margin-bottom: 1rem;
-  /* Cách ảnh với tên 16px */
-  transform: translateY(-80px);
-  /* nâng ảnh lên 40px */
-}
-
-.footer-section .profile-info h5 {
-  font-size: 22px;
-  /* Tên người dùng */
-  font-weight: bold;
-  /* In đậm */
-  margin-top: -60px;
-}
-
-.footer-section .profile-info .tagline {
-  font-size: 16px;
-  /* Mô tả ngắn (tagline) */
-  color: #6c757d;
-  /* Màu xám tro nhẹ */
-  margin-bottom: 100px;
-}
-
-/* === PHẦN 2: LIÊN KẾT MENU (Dẫn đến các trang khác) === */
-.footer-section .links-widget {
-  text-align: center;
-  /* Căn giữa khi nhỏ */
-}
-
-/* Khi màn hình ≥768px thì căn trái để chuyên nghiệp */
-@media (min-width: 768px) {
-  .footer-section .links-widget {
-    text-align: left;
-  }
-}
-
-/* Tiêu đề của mỗi cột trong footer */
-.footer-section .footer-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  border-bottom: 2px ridge #f9f9f9f9;
-  /* Đường line */
-  padding-bottom: 10px;
-}
-
-/* Danh sách liên kết từng dòng */
-.footer-section .link-list li {
-  margin-bottom: 8px;
-  /* Khoảng cách giữa các dòng liên kết */
-}
-
-.footer-section .link-list a {
-  font-size: 16px;
-  color: #212529;
-  /* Màu xám đậm */
-  text-decoration: none;
-  /* Bỏ gạch chân */
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-}
-
-.footer-section .link-list a:hover {
-  text-decoration: underline;
-  /* Hover vào thì gạch chân */
-}
-
-/* === PHẦN 3: THÔNG TIN LIÊN HỆ (Phone, Email, Địa chỉ) === */
-.footer-section .contact-widget p {
-  font-size: 16px;
-  margin-bottom: 8px;
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-}
-
-.footer-section .contact-widget strong {
-  font-weight: 600;
-  /* Làm nổi bật nhãn như "Email:", "Phone:" */
-}
-
-/* === PHẦN 4: ICON MẠNG XÃ HỘI (Footer) === */
-.footer-section .social-icons a {
-  font-size: 20px;
-  /* Kích thước biểu tượng */
-  margin-right: 12px;
-  /* Khoảng cách giữa các biểu tượng */
-}
-
-/* === PHẦN 8: Dòng bản quyền dưới cùng === */
-.footer-copyright {
-  background-color: #0d47a1;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-  font-size: 15px;
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-  margin-top: 0;
-}
-
-/* === PHẦN 7: Mạng xã hội nổi ở góc dưới phải === */
-.social-fixed {
-  position: fixed;
-  /* Cố định vị trí khối icon trên màn hình (không cuộn theo) */
-  bottom: 65px;
-  /* Cách mép dưới màn hình 20px */
-  right: 20px;
-  /* Cách mép phải màn hình 20px */
-  display: flex;
-  /* Dùng flexbox để sắp xếp các icon */
-  flex-direction: column;
-  /* Sắp xếp các icon theo chiều dọc */
-  gap: 12px;
-  /* Khoảng cách giữa các icon là 12px */
-  z-index: 9999;
-  /* Đặt lớp hiển thị cao nhất để không bị che bởi phần tử khác */
-}
-
-.social-fixed a img {
-  width: 44px;
-  /* Chiều rộng của icon là 44px */
-  height: 44px;
-  /* Chiều cao cũng 44px để icon vuông */
-  border-radius: 50%;
-  /* Bo tròn hoàn toàn thành hình tròn */
-  object-fit: cover;
-  /* Đảm bảo ảnh lấp đầy hình tròn mà không bị méo */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  /* Đổ bóng nhẹ dưới icon tạo chiều sâu */
-  transition: all 0.3s ease;
-  /* Tạo hiệu ứng chuyển động mượt khi hover */
-  background-color: white;
-  /* Nền trắng phía sau icon (nếu ảnh là PNG có vùng trong suốt) */
-}
-
-.social-fixed a img:hover {
-  transform: scale(1.1);
-  /* Khi rê chuột vào ảnh, phóng to nhẹ lên 110% */
-}
-
-/* === PHẦN 2: HIỆU ỨNG RƠI (CHO ẢNH BANNER) === */
-@keyframes fall {
-  to {
-    transform: translateY(500px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-.falling-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.falling-item {
-  position: absolute;
-  top: -40px;
-  font-size: 20px;
-  color: white;
-  opacity: 0.8;
-  animation: fall 6s linear forwards;
-  user-select: none;
-}
-
+/* --- HIỆU ỨNG THẺ DỰ ÁN --- */
+/*
+  - Hiệu ứng chuyển động mượt mà cho các thẻ dự án.
+  - Khi di chuột vào, thẻ sẽ dịch chuyển lên và đổ bóng.
+*/
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
@@ -524,7 +520,7 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Nếu muốn ảnh cũng có hiệu ứng */
+/* Hiệu ứng phóng to ảnh bên trong thẻ khi di chuột */
 .project-card img {
   transition: transform 0.3s ease;
 }
@@ -532,46 +528,37 @@ body {
 .project-card:hover img {
   transform: scale(1.03);
 }
+/* ========================================================================== */
+/* STYLE CHO TRANG KHÁM PHÁ (khampha.html)                               */
+/* ========================================================================== */
 
-.contact-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  padding: 60px 15px;
-}
-
-.contact-card {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-}
-
-.hidden {
-  display: none;
-}
-
-/*  PHẦN CSS TRANG KHÁM PHÁ */
-/* Zoom ảnh khi hover */
+/* --- HIỆU ỨNG ZOOM ẢNH KHI DI CHUỘT --- */
+/*
+  - Lớp bọc để chứa ảnh và tạo hiệu ứng phóng to.
+  - `overflow: hidden` sẽ cắt phần ảnh bị tràn ra ngoài khi phóng to.
+*/
 .img-hover-zoom {
   overflow: hidden;
   border-radius: 0.5rem 0.5rem 0 0;
   position: relative;
 }
+
+/* Ảnh bên trong lớp bọc */
 .img-hover-zoom img {
   transition: transform 0.5s ease;
   display: block;
   width: 100%;
 }
+
+/* Phóng to ảnh khi di chuột vào container */
 .img-hover-zoom:hover img {
   transform: scale(1.08);
 }
 
-/* Overlay mờ + nút xem chi tiết */
+/* --- OVERLAY MỜ TRÊN ẢNH --- */
+/*
+  - Một lớp phủ đen mờ xuất hiện trên ảnh khi di chuột.
+*/
 .img-overlay {
   position: absolute;
   top: 0;
@@ -579,17 +566,55 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
+  opacity: 0; /* Ẩn theo mặc định */
   transition: opacity 0.3s ease;
 }
+
+/* Hiển thị lớp phủ khi di chuột */
 .img-hover-zoom:hover .img-overlay {
   opacity: 1;
 }
 
-/* Card di chuyển nhẹ khi hover */
+/* --- HIỆU ỨNG THẺ DU LỊCH/KHÁM PHÁ --- */
+/*
+  - Tạo hiệu ứng dịch chuyển nhẹ cho các thẻ khi di chuột vào.
+*/
 .travel-card {
   transition: transform 0.3s ease;
 }
+
+/* Nâng thẻ lên khi di chuột */
 .travel-card:hover {
   transform: translateY(-5px);
+}
+/* ========================================================================== */
+/* STYLE CHO TRANG KẾT NỐI (ketnoi.html)                                 */
+/* ========================================================================== */
+
+/* --- PHẦN LIÊN HỆ --- */
+/*
+  - Định dạng container cho form và thông tin liên hệ.
+  - Sử dụng flexbox để căn giữa nội dung theo cả chiều dọc và ngang.
+*/
+.contact-section {
+  min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao viewport */
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  background-color: #f9f9f9;
+  padding: 60px 15px;
+}
+
+/* --- THẺ LIÊN HỆ --- */
+/*
+  - Khung bọc cho nội dung liên hệ.
+  - `box-shadow` tạo hiệu ứng nổi.
+*/
+.contact-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
