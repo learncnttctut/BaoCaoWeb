@@ -16,6 +16,84 @@ body {
   margin: 0;
   padding: 0;
 }
+/* ========== NAVBAR CƠ BẢN ========== */
+
+/* Chiều cao tổng thể navbar */
+.navbar {
+  min-height: 90px;
+}
+/* Navbar dropdown item */
+.navbar .dropdown-item {
+  font-weight: 700; /* chữ đậm */
+  color: #333; /* màu chữ tối */
+  padding: 0.5rem 1.5rem; /* khoảng cách bên trong trên dưới và trái phải */
+  letter-spacing: 0.03em; /* khoảng cách giữa các chữ */
+  background-color: #fff; /* nền trắng mặc định */
+  transition: background-color 0.3s ease, color 0.3s ease; /* chuyển màu nền và chữ mượt */
+  cursor: pointer; /* con trỏ chuột khi hover thành tay */
+}
+
+/* Nền cho dropdown menu */
+.navbar .dropdown-menu {
+  background-color: #f8f9fa; /* nền trắng xám nhẹ */
+  border: none; /* không viền */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+  padding: 0.25rem 0; /* khoảng cách trên dưới */
+  min-width: 10rem; /* chiều rộng tối thiểu */
+}
+
+/* Hiệu ứng khi hover hoặc focus vào dropdown item */
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #e9ecef; /* nền sáng hơn khi hover */
+  color: #0d6efd; /* đổi màu chữ thành xanh bootstrap */
+  text-decoration: none; /* bỏ gạch chân */
+}
+
+/* Khoảng cách giữa các dropdown item kế tiếp nhau */
+.navbar .dropdown-menu > .dropdown-item + .dropdown-item {
+  margin-top: 0.2rem; /* cách nhau 0.2rem */
+}
+
+/* Đậm chữ và tăng cỡ chữ dropdown item */
+.navbar .dropdown-item {
+  font-weight: 700; /* đậm chữ */
+  font-size: 1.05rem; /* cỡ chữ hơi lớn */
+  letter-spacing: 0.05em; /* khoảng cách chữ rộng hơn */
+}
+
+/* Hiệu ứng mượt khi dropdown mở - mặc định ẩn */
+.dropdown-menu {
+  transition: opacity 0.3s ease, transform 0.3s ease; /* chuyển mượt opacity và vị trí */
+  transform-origin: top center; /* xuất phát hiệu ứng từ trên giữa */
+  opacity: 0; /* ẩn hoàn toàn */
+  display: block; /* vẫn giữ kích thước để tính toán */
+  visibility: hidden; /* không hiển thị */
+  transform: translateY(10px); /* dịch xuống 10px */
+  pointer-events: none; /* không cho tương tác khi ẩn */
+}
+
+/* Khi dropdown bật (mở) */
+.dropdown.show > .dropdown-menu {
+  opacity: 1; /* hiện rõ */
+  visibility: visible; /* hiển thị */
+  transform: translateY(0); /* trả về vị trí gốc */
+  pointer-events: auto; /* cho phép tương tác */
+}
+
+/* Định dạng chữ cho các liên kết trong menu chính */
+.navbar-nav .nav-link {
+  font-weight: 700; /* chữ đậm */
+  font-size: 1.25rem; /* cỡ chữ lớn */
+  letter-spacing: 0.05em; /* khoảng cách chữ */
+  transition: color 0.3s ease; /* hiệu ứng chuyển màu chữ mượt */
+}
+
+/* Hiệu ứng khi hover hoặc focus vào menu chính */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #fd0d11; /* đổi màu chữ thành xanh bootstrap */
+}
 
 /* --- TIÊU ĐỀ CHUNG CHO CÁC PHẦN --- */
 /*

@@ -1,72 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Khai báo đây là tài liệu HTML5 -->
+<html lang="vi">
+  <!-- Ngôn ngữ sử dụng là tiếng Việt -->
+
   <head>
+    <!-- MÃ HÓA VÀ TỐI ƯU TRÊN MỌI THIẾT BỊ -->
     <meta charset="UTF-8" />
+    <!-- Thiết lập bảng mã UTF-8 hỗ trợ tiếng Việt -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kết nối</title>
+    <!-- Responsive trên các thiết bị -->
+
+    <!-- TIÊU ĐỀ TRANG -->
+    <title>Hành trình | Nguyễn Văn Phước</title>
+
+    <!-- THƯ VIỆN GIAO DIỆN VÀ PHÔNG CHỮ -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      h
     />
+    <!-- Bootstrap 5 -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
       rel="stylesheet"
     />
+    <!-- Font chữ Montserrat -->
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Nhúng file CSS riêng -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Nhúng Font chữ -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <!-- tìm kiếm -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- File CSS tùy chỉnh riêng -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    <!-- ================================ -->
+<!-- [PHẦN 1] THANH ĐIỀU HƯỚNG NAVBAR -->
+<!-- ================================ -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <!-- LOGO/THƯƠNG HIỆU -->
+    <a class="navbar-brand fw-bold text-primary" href="#">NGUYỄN VĂN PHƯỚC</a>
+
+    <!-- NÚT MỞ MENU TRÊN DI ĐỘNG -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
     >
-      <div class="container">
-        <a class="navbar-brand fw-bold text-primary" href="#"
-          >NGUYỄN VĂN PHƯỚC</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- Các liên kết menu -->
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Giới thiệu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hanhtrinh.html">Hành trình</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="duan.html">Dự án</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="khampha.html">Khám phá</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-primary fw-semibold" href="#"
-                >Kết nối</a
-              >
-            </li>
-          </ul>
-          <span class="ms-3 fs-5">🔍</span>
-        </div>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- DANH MỤC MENU -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="hanhtrinh.html">Hành trình</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="duan.html">Dự án</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="khampha.html">Khám phá</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-primary fw-semibold" href="#">Kết nối</a>
+        </li>
+      </ul>
+
+      <!-- NÚT TÌM KIẾM -->
+      <div class="ms-3 position-relative">
+        <i
+          class="fa-solid fa-magnifying-glass fs-5"
+          id="searchToggle"
+          style="cursor: pointer"
+        ></i>
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control form-control-sm position-absolute top-100 start-0 mt-2"
+          placeholder="Tìm kiếm..."
+          style="width: 200px; display: none; z-index: 999;"
+        />
       </div>
+    </div>
+  </div>
+</nav>
+<!-- xử lí thanh tìm kiếm -->
+<script>
+  const searchToggle = document.getElementById("searchToggle");
+  const searchInput = document.getElementById("searchInput");
+
+  searchToggle.addEventListener("click", () => {
+    const isHidden = searchInput.style.display === "none" || searchInput.style.display === "";
+    searchInput.style.display = isHidden ? "block" : "none";
+    if (isHidden) searchInput.focus();
+  });
+</script>
+
     </nav>
     <!-- PHẦN LIÊN HỆ -->
     <section class="py-5 bg-light">

@@ -26,17 +26,22 @@
     />
     <!-- Font chữ Montserrat -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- tìm kiếm -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <!-- File CSS tùy chỉnh riêng -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Font Roboto -->
   </head>
 
   <body>
     <!-- ===================================== -->
-    <!-- [PHẦN 1:THANH ĐIỀU HƯỚNG (NAVBAR)] -->
+    <!-- [PHẦN 1: THANH ĐIỀU HƯỚNG (NAVBAR)] -->
     <!-- ===================================== -->
 
     <nav
@@ -80,11 +85,39 @@
               <a class="nav-link" href="ketnoi.html">Kết nối</a>
             </li>
           </ul>
-          <span class="ms-3 fs-5">🔍</span>
-          <!-- Icon tìm kiếm -->
+
+          <!-- NÚT TÌM KIẾM -->
+          <div class="ms-3 position-relative">
+            <i
+              class="fa-solid fa-magnifying-glass fs-5"
+              id="searchToggle"
+              style="cursor: pointer"
+            ></i>
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control form-control-sm position-absolute top-100 start-0 mt-2"
+              placeholder="Tìm kiếm..."
+              style="width: 200px; display: none; z-index: 999"
+            />
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- xử lí thanh tìm kiếm -->
+    <script>
+      const searchToggle = document.getElementById("searchToggle");
+      const searchInput = document.getElementById("searchInput");
+
+      searchToggle.addEventListener("click", () => {
+        const isHidden =
+          searchInput.style.display === "none" ||
+          searchInput.style.display === "";
+        searchInput.style.display = isHidden ? "block" : "none";
+        if (isHidden) searchInput.focus();
+      });
+    </script>
 
     <!-- ===================================== -->
     <!-- [PHẦN 2: ẢNH BANNER CÓ HIỆU ỨNG RƠI] -->
