@@ -2,71 +2,43 @@
    STYLE CHO TRANG HÀNH TRÌNH (hanhtrinh.html)
    ========================================================================== */
 
-/* === BỔ SUNG STYLE CHO CÁC THÀNH PHẦN CÓ INLINE STYLE === */
+/* === 1. LOGO TRONG NAVBAR === */
 .navbar-logo {
-  height: 80px;
+  height: 80px; /* dùng trong class="navbar-logo" */
 }
 
+/* === 2. Ô TÌM KIẾM ẨN/HIỆN === */
 .search-input-style {
-  width: 200px;
-  display: none;
-  z-index: 999;
+  width: 200px; /* chiều rộng ô tìm kiếm */
+  display: none; /* mặc định ẩn */
+  z-index: 999; /* nổi lên trên */
 }
 
+/* === 3. PHẦN BANNER ĐẦU TRANG === */
 .banner-section {
-  position: relative;
-  height: 1000px;
-  overflow: hidden;
+  position: relative; /* cho phép position tuyệt đối bên trong */
+  height: 1000px; /* chiều cao banner */
+  overflow: hidden; /* ẩn phần tràn của hiệu ứng */
 }
 
 .banner-image {
-  height: 100%;
-  object-fit: cover;
+  height: 100%; /* chiều cao ảnh phủ banner */
+  object-fit: cover; /* giữ tỉ lệ ảnh */
 }
 
+/* === 4. ẢNH CHÂN DUNG / HOẠT ĐỘNG === */
 .image-ratio-style {
   height: 400px;
   object-fit: cover;
 }
 
+/* === 5. ẢNH ĐẠI DIỆN TRONG FOOTER === */
 .profile-avatar {
   width: 150px;
   height: 150px;
 }
 
-/*Hiệu ứng hoa rơi banner*/
-.banner-section {
-  position: relative;
-  overflow: hidden;
-}
-.banner-image {
-  object-fit: cover;
-  height: 100%;
-}
-
-/*-------------------------*/
-.falling-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.falling-item {
-  position: absolute;
-  top: -40px;
-  font-size: 20px;
-  color: white;
-  opacity: 0.8;
-  animation: fall 6s linear forwards;
-  user-select: none;
-}
-
-/* === PHẦN HERO (BANNER ĐẦU TRANG) === */
+/* === 7. PHẦN HERO (TIÊU ĐỀ HÀNH TRÌNH) === */
 .hero {
   padding: 100px 20px 80px;
   text-align: center;
@@ -90,64 +62,107 @@
   color: #555;
 }
 
-/* === KHỐI THẺ (CARD SECTION) === */
+/* === 8. CÁC THẺ CUSTOM CARD (SV5T, LTV, TNTT) === */
 .custom-card-container {
   display: flex;
-  flex-wrap: wrap; /* Cho phép xuống dòng */
-  gap: 24px; /* Khoảng cách giữa các thẻ */
-  justify-content: center; /* Căn giữa các thẻ theo chiều ngang */
-  padding: 40px 0;
-  background-color: #f9f9f9;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f1f5f9;
+  font-family: "Segoe UI", "Poppins", sans-serif;
 }
 
-/* Định dạng từng thẻ card */
 .custom-card {
-  width: 350px;
-  height: 200px;
-  border-radius: 32px;
-  color: white;
-  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  min-height: 250px;
+  border-radius: 28px;
+  padding: 32px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid transparent;
+  color: #1e293b;
 }
 
-/* Hiệu ứng khi di chuột vào thẻ */
 .custom-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Tiêu đề và nội dung của thẻ */
+.custom-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.custom-card:hover::before {
+  opacity: 1;
+}
+
 .custom-card-title {
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 18px;
+  z-index: 2;
+  position: relative;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .custom-card-text {
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 18px;
+  line-height: 1.6;
+  z-index: 2;
+  position: relative;
+  color: #0f172a;
+  opacity: 0.9;
 }
 
-/* --- MÀU NỀN RIÊNG CHO TỪNG LOẠI THẺ --- */
 .card-sv5t {
-  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+  background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+  color: white;
 }
-
 .card-ltv {
-  background: linear-gradient(135deg, #0062ff 0%, #33ccff 100%);
+  background: linear-gradient(135deg, #3f51b5 0%, #7986cb 100%);
+  color: white;
 }
-
 .card-tntt {
-  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+  color: white;
 }
 
-/*-- mẫu chuyện hay ý nghĩa -->*/
+.card-sv5t .custom-card-title,
+.card-sv5t .custom-card-text,
+.card-ltv .custom-card-title,
+.card-ltv .custom-card-text,
+.card-tntt .custom-card-title,
+.card-tntt .custom-card-text {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* === 9. MẪU CHUYỆN TRUYỀN CẢM HỨNG === */
 .gradient-bg {
   background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
 }
@@ -161,11 +176,13 @@
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+
 .card-img-top {
   height: 220px;
   object-fit: cover;
 }
 
+/* === 10. HIỆU ỨNG FADE-IN === */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
@@ -176,29 +193,24 @@
   transform: translateY(0);
 }
 
-/* --- RESPONSIVE TRANG HÀNH TRÌNH --- */
+/* === 11. RESPONSIVE === */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-
   .hero p.lead {
     font-size: 1rem;
   }
-
   .custom-card {
     width: 100%;
     height: 180px;
   }
-
   .custom-card-title {
     font-size: 22px;
   }
-
   .custom-card-text {
     font-size: 18px;
   }
-
   .image-ratio-style {
     height: 300px;
   }
