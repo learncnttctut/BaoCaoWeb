@@ -2,13 +2,13 @@
      STYLE CHO PHẦN HEADER (HERO SECTION)
      ========================================================================== */
 .hero-section {
-  background: linear-gradient(
-    135deg,
-    #e9f3ff,
-    #ffffff
-  ); /* Nền gradient nhẹ nhàng */
+  background: linear-gradient(135deg,
+      #e9f3ff,
+      #ffffff);
+  /* Nền gradient nhẹ nhàng */
   padding: 100px 20px;
-  color: #1a237e; /* Màu chữ tiêu đề */
+  color: #1a237e;
+  /* Màu chữ tiêu đề */
 }
 
 .hero-section h1 {
@@ -26,48 +26,125 @@
 /* ==========================================================================
          STYLE CHO CÁC THẺ DỰ ÁN (PROJECT CARDS)
          ========================================================================== */
+/* --- Tiêu đề của Section --- */
 .section-title {
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1a237e;
+  /* Chữ đậm hơn */
+  text-transform: uppercase;
+  /* Viết hoa */
+  letter-spacing: 1px;
+  /* Tăng khoảng cách ký tự */
+  color: #343a40;
+  /* Màu tối gần như đen */
+  position: relative;
+  padding-bottom: 15px;
+  /* Tạo không gian cho gạch chân */
 }
 
-.project-card {
+/* Tạo gạch chân trang trí cho tiêu đề */
+.section-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 80px;
+  /* Độ rộng của gạch chân */
+  height: 4px;
+  /* Độ dày của gạch chân */
+  background: #0d6efd;
+  /* Màu xanh dương (có thể đổi thành màu chủ đạo của bạn) */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Căn giữa gạch chân */
+  border-radius: 2px;
+}
+
+/* --- Thẻ Dự án (Project Card) --- */
+#project .card {
   border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Bỏ viền mặc định của card */
+  border-radius: 10px;
+  /* Bo góc mềm mại hơn */
+  transition: all 0.3s ease-in-out;
+  /* Hiệu ứng chuyển động mượt mà */
   overflow: hidden;
+  /* Ẩn các phần tử con bị tràn ra ngoài khi zoom */
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+/* Hiệu ứng khi di chuột vào card */
+#project .card:hover {
+  transform: translateY(-10px);
+  /* Nâng card lên một chút */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  /* Đổ bóng rõ hơn */
 }
 
-.project-card .card-img-top {
-  height: 200px;
+/* --- Hình ảnh của Card --- */
+.card-img-top {
+  height: 220px;
+  /* Đặt chiều cao cố định cho ảnh */
   object-fit: cover;
+  /* Đảm bảo ảnh lấp đầy khung mà không bị méo */
+  transition: transform 0.4s ease;
+  /* Hiệu ứng zoom ảnh mượt */
 }
 
-.project-card .card-body {
-  padding: 1.5rem;
+/* Hiệu ứng zoom ảnh khi di chuột vào card */
+#project .card:hover .card-img-top {
+  transform: scale(1.05);
+  /* Phóng to ảnh lên một chút */
 }
 
-.project-card .card-title {
-  font-size: 1.3rem;
-  color: #1a237e;
+/* --- Thân Card --- */
+.card-body {
+  background-color: #ffffff;
 }
 
-.project-card .badge {
-  font-size: 0.8rem;
-  font-weight: 600;
+/* Tiêu đề của card */
+.card-title {
+  color: #333;
+}
+
+/* Mô tả của card */
+.card-text {
+  font-size: 0.9rem;
+  /* Cỡ chữ nhỏ hơn một chút cho mô tả */
+  flex-grow: 1;
+  /* Giúp đẩy các nút xuống dưới cùng */
+}
+
+/* --- Thẻ công nghệ (Tech Badges) --- */
+.badge {
+  font-size: 0.75rem;
   padding: 0.4em 0.7em;
-  border-radius: 20px;
+  font-weight: 500;
 }
 
-.project-card .btn {
-  font-weight: 600;
+/* --- Các nút (Buttons) --- */
+.btn {
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  /* Bo góc cho nút */
+  padding: 0.5rem 1rem;
+}
+
+/* Nút "Xem Live" */
+.btn-dark:hover {
+  background-color: #212529;
+  /* Làm màu tối hơn một chút khi hover */
+  transform: translateY(-2px);
+}
+
+/* Nút "Mã Nguồn" */
+.btn-outline-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Thông báo lỗi hoặc không có dữ liệu --- */
+.text-danger {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* ==========================================================================
