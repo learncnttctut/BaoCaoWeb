@@ -1,207 +1,168 @@
 <!DOCTYPE html>
-<!-- Khai báo đây là tài liệu HTML5 -->
 <html lang="vi">
-  <!-- Ngôn ngữ sử dụng là tiếng Việt -->
-
   <head>
-    <!-- MÃ HÓA VÀ TỐI ƯU TRÊN MỌI THIẾT BỊ -->
     <meta charset="UTF-8" />
-    <!-- Thiết lập bảng mã UTF-8 hỗ trợ tiếng Việt -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Responsive trên các thiết bị -->
+    <title>Kết nối | Nguyễn Văn Phước</title>
 
-    <!-- TIÊU ĐỀ TRANG -->
-    <title>Hành trình | Nguyễn Văn Phước</title>
-
-    <!-- THƯ VIỆN GIAO DIỆN VÀ PHÔNG CHỮ -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font chữ Montserrat -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- tìm kiếm -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-        <!-- icon mạng xã hội -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- File CSS tùy chỉnh riêng -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@300;400;700&family=Segoe+UI&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/ketnoi.css" />
   </head>
+
   <body>
-    <!-- ================================ -->
-<!-- [PHẦN 1] THANH ĐIỀU HƯỚNG NAVBAR -->
-<!-- ================================ -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <!-- LOGO/THƯƠNG HIỆU -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img
-      src="images/LOGO02.jpg"
-        alt="Logo"
-        style="height: 80px"
-        class="me-2"
-      />
-      <span class="fw-bold text-primary">NGUYỄN VĂN PHƯỚC</span>
-    </a>
-    <!-- NÚT MỞ MENU TRÊN DI ĐỘNG -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNav"
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
     >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/LOGO02.jpg" alt="Logo" class="me-2 navbar-logo" />
+          <span class="fw-bold text-primary">NGUYỄN VĂN PHƯỚC</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- DANH MỤC MENU -->
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="hanhtrinh.html">Hành trình</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="duan.html">Dự án</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="khampha.html">Khám phá</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-primary fw-semibold" href="#">Kết nối</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hanhtrinh.html">Hành trình</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="duan.html">Dự án</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="khampha.html">Khám phá</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-primary fw-semibold" href="#"
+                >Kết nối</a
+              >
+            </li>
+          </ul>
 
-      <!-- NÚT TÌM KIẾM -->
-      <div class="ms-3 position-relative">
-        <i
-          class="fa-solid fa-magnifying-glass fs-5"
-          id="searchToggle"
-          style="cursor: pointer"
-        ></i>
-        <input
-          type="text"
-          id="searchInput"
-          class="form-control form-control-sm position-absolute top-100 start-0 mt-2"
-          placeholder="Tìm kiếm..."
-          style="width: 200px; display: none; z-index: 999;"
-        />
+          <div class="ms-3 position-relative">
+            <i
+              class="fa-solid fa-magnifying-glass fs-5 search-toggle-icon"
+              id="searchToggle"
+            ></i>
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control form-control-sm position-absolute top-100 start-0 mt-2 search-input-style"
+              placeholder="Tìm kiếm..."
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
-<!-- xử lí thanh tìm kiếm -->
-<script>
-  const searchToggle = document.getElementById("searchToggle");
-  const searchInput = document.getElementById("searchInput");
-
-  searchToggle.addEventListener("click", () => {
-    const isHidden = searchInput.style.display === "none" || searchInput.style.display === "";
-    searchInput.style.display = isHidden ? "block" : "none";
-    if (isHidden) searchInput.focus();
-  });
-</script>
     </nav>
 
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-card row">
+          <div class="col-md-5 contact-info pe-md-5">
+            <h3 class="fw-bold text-primary mb-4">Thông tin liên hệ</h3>
+            <p><strong>👤 Họ tên:</strong> Nguyễn Văn Phước</p>
+            <p><strong>📧 Email:</strong> learncnttctut@gmail.com</p>
+            <p><strong>📞 Số điện thoại:</strong> 0333947524</p>
+            <p><strong>📍 Địa chỉ:</strong> Cần Thơ, Việt Nam</p>
 
-<!-- PHẦN LIÊN HỆ -->
-<section class="contact-section">
-  <div class="container">
-    <div class="contact-card row">
-      <!-- Cột trái: Thông tin cá nhân -->
-      <div class="col-md-5 contact-info pe-md-5">
-        <h3 class="fw-bold text-primary mb-4">Thông tin liên hệ</h3>
-        <p><strong>👤 Họ tên:</strong> Nguyễn Văn Phước</p>
-        <p><strong>📧 Email:</strong> learncnttctut@gmail.com</p>
-        <p><strong>📞 Số điện thoại:</strong> 0333947524</p>
-        <p><strong>📍 Địa chỉ:</strong> Cần Thơ, Việt Nam</p>
+            <h5>Kết nối với tôi</h5>
+            <ul class="social-links">
+              <li>
+                <a href="https://facebook.com/yourprofile" target="_blank"
+                  ><i class="fab fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://zalo.me/yourzaloid" target="_blank"
+                  ><i class="fas fa-phone"></i> Zalo</a
+                >
+              </li>
+              <li>
+                <a href="mailto:yourmail@gmail.com"
+                  ><i class="fas fa-envelope"></i> Gmail</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/yourgithub" target="_blank"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </li>
+            </ul>
+          </div>
 
-<h5>Kết nối với tôi</h5>
-<ul class="social-links">
-  <li><a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-  <li><a href="https://zalo.me/yourzaloid" target="_blank"><i class="fas fa-phone"></i> Zalo</a></li>
-  <li><a href="mailto:yourmail@gmail.com"><i class="fas fa-envelope"></i> Gmail</a></li>
-  <li><a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-</ul>
+          <div class="col-md-1 d-none d-md-flex justify-content-center">
+            <div class="separator"></div>
+          </div>
 
-        
+          <div class="col-md-6 contact-form ps-md-5 mt-5 mt-md-0">
+            <h3 class="fw-bold text-primary mb-4">Liên hệ với tôi</h3>
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Nội dung</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary px-4">
+                Gửi
+                <span
+                  class="spinner-border spinner-border-sm ms-2 d-none"
+                  id="spinner"
+                ></span>
+              </button>
+              <div id="successMessage" class="alert alert-success mt-3 d-none">
+                ✅ Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể!
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <!-- Đường kẻ phân cách -->
-      <div class="col-md-1 d-none d-md-flex justify-content-center">
-        <div class="separator"></div>
-      </div>
-
-      <!-- Cột phải: Form -->
-      <div class="col-md-6 contact-form ps-md-5 mt-5 mt-md-0">
-        <h3 class="fw-bold text-primary mb-4">Liên hệ với tôi</h3>
-        <form id="contactForm" novalidate>
-          <div class="mb-3">
-            <label for="name" class="form-label">Họ và tên</label>
-            <input type="text" class="form-control" id="name" required />
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required />
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Nội dung</label>
-            <textarea class="form-control" id="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary px-4">
-            Gửi
-            <span class="spinner-border spinner-border-sm ms-2 d-none" id="spinner"></span>
-          </button>
-          <div id="successMessage" class="alert alert-success mt-3 d-none">
-            ✅ Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể!
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const spinner = document.getElementById("spinner");
-    const message = document.getElementById("successMessage");
-    spinner.classList.remove("d-none");
-    setTimeout(() => {
-      spinner.classList.add("d-none");
-      message.classList.remove("d-none");
-      this.reset();
-    }, 1500);
-  });
-</script>
-
+    </section>
 
     <footer class="footer-section">
       <div class="container">
         <div class="row align-items-start">
-          <!-- Cột 1: Thông tin cá nhân -->
           <div class="col-md-4 mb-4">
             <div class="profile-info">
               <img
                 src="images/avatar.jpg"
                 alt="Nguyễn Văn Phước"
-                class="img-fluid rounded-circle mb-3 mx-auto d-block"
+                class="img-fluid rounded-circle mb-3 mx-auto d-block profile-avatar-footer"
               />
+
               <h5>Nguyễn Văn Phước</h5>
               <p class="tagline text-muted">
                 A person temporarily works as a software engineer
@@ -209,7 +170,6 @@
             </div>
           </div>
 
-          <!-- Cột 2: Liên kết điều hướng -->
           <div class="col-md-4 mb-4">
             <div class="links-widget">
               <h4 class="footer-title">Liên kết</h4>
@@ -243,7 +203,6 @@
             </div>
           </div>
 
-          <!-- Cột 3: Thông tin liên hệ -->
           <div class="col-md-4 mb-4">
             <div class="contact-widget">
               <h4 class="footer-title">Kết nối</h4>
@@ -256,7 +215,6 @@
       </div>
     </footer>
 
-    <!-- PHẦN 7: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH -->
     <div class="social-fixed">
       <a href="https://www.facebook.com/share/15Kbbdbduq/"
         ><img src="images/facebook.png" alt="Facebook"
@@ -267,11 +225,58 @@
       <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
     </div>
 
-    <!-- PHẦN 8: COPYRIGHT CUỐI TRANG -->
     <div class="footer-copyright">
       © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
     </div>
-    <!-- PHẦN 9: NHÚNG JAVASCRIPT BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // JavaScript tùy chỉnh cho thanh tìm kiếm và form liên hệ
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Script cho thanh tìm kiếm ---
+        const searchToggle = document.getElementById("searchToggle");
+        const searchInput = document.getElementById("searchInput");
+
+        if (searchToggle && searchInput) {
+          searchToggle.addEventListener("click", () => {
+            const isHidden =
+              searchInput.style.display === "none" ||
+              searchInput.style.display === "";
+            searchInput.style.display = isHidden ? "block" : "none";
+            if (isHidden) {
+              searchInput.focus();
+            }
+          });
+        }
+
+        // --- Script cho form liên hệ ---
+        const contactForm = document.getElementById("contactForm");
+        const spinner = document.getElementById("spinner");
+        const successMessage = document.getElementById("successMessage");
+
+        if (contactForm && spinner && successMessage) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Ngăn chặn form gửi đi mặc định
+
+            // Hiển thị spinner
+            spinner.classList.remove("d-none");
+
+            // Ẩn thông báo thành công nếu đang hiển thị
+            successMessage.classList.add("d-none");
+
+            // Giả lập gửi dữ liệu
+            setTimeout(() => {
+              // Ẩn spinner và hiển thị thông báo thành công sau 1.5 giây
+              spinner.classList.add("d-none");
+              successMessage.classList.remove("d-none");
+
+              // Reset form sau khi gửi thành công
+              this.reset();
+            }, 1500);
+          });
+        }
+      });
+    </script>
   </body>
 </html>

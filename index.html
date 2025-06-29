@@ -1,65 +1,41 @@
-<!-- PHẦN KHAI BÁO CƠ BẢN -->
 <!DOCTYPE html>
-<!-- Khai báo đây là tài liệu HTML5 -->
 <html lang="vi">
-  <!-- Ngôn ngữ sử dụng là tiếng Việt -->
-
   <head>
-    <!-- MÃ HÓA VÀ TỐI ƯU TRÊN MỌI THIẾT BỊ -->
     <meta charset="UTF-8" />
-    <!-- Thiết lập bảng mã UTF-8 hỗ trợ tiếng Việt -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Responsive trên các thiết bị -->
+    <title>Giới thiệu | Nguyễn Văn Phước</title>
 
-    <!-- TIÊU ĐỀ TRANG -->
-    <title>Hành trình | Nguyễn Văn Phước</title>
-
-    <!-- THƯ VIỆN GIAO DIỆN VÀ PHÔNG CHỮ -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font chữ Montserrat -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- tìm kiếm -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- File CSS tùy chỉnh riêng -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Georgia&family=Segoe+UI&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
 
   <body>
-    <!-- ===================================== -->
-    <!-- [PHẦN 1: THANH ĐIỀU HƯỚNG (NAVBAR)] -->
-    <!-- ===================================== -->
-
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
     >
       <div class="container">
-        <!-- LOGO/THƯƠNG HIỆU -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="images/LOGO02.jpg"
-            alt="Logo"
-            style="height: 80px"
-            class="me-2"
-          />
+          <img src="images/LOGO02.jpg" alt="Logo" class="me-2 navbar-logo" />
           <span class="fw-bold text-primary">NGUYỄN VĂN PHƯỚC</span>
         </a>
 
-        <!-- NÚT MỞ MENU TRÊN DI ĐỘNG -->
         <button
           class="navbar-toggler"
           type="button"
@@ -69,12 +45,12 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- DANH MỤC MENU -->
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- Các mục menu dẫn đến các trang khác -->
             <li class="nav-item">
-              <a class="nav-link active text-primary fw-semibold" href="#"
+              <a
+                class="nav-link active text-primary fw-semibold"
+                href="index.html"
                 >Giới thiệu</a
               >
             </li>
@@ -92,100 +68,37 @@
             </li>
           </ul>
 
-          <!-- NÚT TÌM KIẾM -->
           <div class="ms-3 position-relative">
             <i
-              class="fa-solid fa-magnifying-glass fs-5"
+              class="fa-solid fa-magnifying-glass fs-5 search-toggle-icon"
               id="searchToggle"
-              style="cursor: pointer"
             ></i>
             <input
               type="text"
               id="searchInput"
-              class="form-control form-control-sm position-absolute top-100 start-0 mt-2"
+              class="form-control form-control-sm position-absolute top-100 start-0 mt-2 search-input-style"
               placeholder="Tìm kiếm..."
-              style="width: 200px; display: none; z-index: 999"
             />
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- xử lí thanh tìm kiếm -->
-    <script>
-      const searchToggle = document.getElementById("searchToggle");
-      const searchInput = document.getElementById("searchInput");
-
-      searchToggle.addEventListener("click", () => {
-        const isHidden =
-          searchInput.style.display === "none" ||
-          searchInput.style.display === "";
-        searchInput.style.display = isHidden ? "block" : "none";
-        if (isHidden) searchInput.focus();
-      });
-    </script>
-
-    <!-- ===================================== -->
-    <!-- [PHẦN 2: ẢNH BANNER CÓ HIỆU ỨNG RƠI] -->
-    <!-- ===================================== -->
-
-    <section
-      class="position-relative"
-      style="overflow: hidden; margin: 0; padding: 0"
-    >
-      <!-- Ảnh banner nền -->
+    <section class="banner-section">
       <img
         src="images/bannerIndex.jpg"
         alt="Banner của Phước"
-        style="width: 100vw; height: auto; display: block"
+        class="img-fluid rounded w-100 banner-image-style"
       />
-
-      <!-- Container chứa hiệu ứng bông tuyết rơi -->
-      <div
-        class="falling-container"
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 2;
-          pointer-events: none;
-          overflow: hidden;
-        "
-      ></div>
+      <div class="falling-container"></div>
     </section>
 
-    <!-- SCRIPT: TẠO BÔNG TUYẾT RƠI -->
-    <script>
-      const container = document.querySelector(".falling-container");
-
-      function createSnowflake() {
-        const flake = document.createElement("div");
-        flake.classList.add("falling-item");
-        flake.textContent = "❄"; // Biểu tượng tuyết
-        flake.style.left = Math.random() * window.innerWidth + "px";
-        flake.style.fontSize = 16 + Math.random() * 16 + "px";
-        container.appendChild(flake);
-        setTimeout(() => flake.remove(), 6000); // Xóa sau 6 giây
-      }
-
-      setInterval(createSnowflake, 300); // Cứ mỗi 300ms tạo 1 bông tuyết
-    </script>
-
-    <!-- ===================================== -->
-    <!-- [PHẦN 3: GIỚI THIỆU BẢN THÂN] -->
-    <!-- ===================================== -->
-
     <div class="container-fluid mt-5">
-      <!-- TIÊU ĐỀ CHÍNH -->
       <div class="header-title text-center mb-5">
         <h1>GIỚI THIỆU BẢN THÂN</h1>
       </div>
 
-      <!-- KHỐI CHIA LAYOUT 3 CỘT: ẢNH - THANH DỌC - NỘI DUNG -->
       <div class="row profile-section">
-        <!-- CỘT 1: ẢNH CHÂN DUNG -->
         <div
           class="col-md-5 p-0 d-flex align-items-center justify-content-center"
         >
@@ -196,19 +109,16 @@
           />
         </div>
 
-        <!-- CỘT 2: THANH DỌC NGĂN CÁCH -->
         <div
           class="col-md-1 d-none d-md-flex align-items-center justify-content-center"
         >
-          <div class="separator-line" style="height: 85%"></div>
+          <div class="separator-line"></div>
         </div>
 
-        <!-- CỘT 3: NỘI DUNG GIỚI THIỆU -->
         <div
           class="col-md-6 content-box d-flex flex-column justify-content-center py-5"
         >
           <div class="intro-text-wrapper">
-            <!-- PHẦN GIỚI THIỆU CẢM XÚC -->
             <h2 class="greeting-text">Xin chào, mình là</h2>
             <h1 class="name-title">NGUYỄN VĂN PHƯỚC</h1>
             <p>
@@ -232,7 +142,6 @@
               mình trong từng trang nhỏ này.
             </p>
 
-            <!-- THÔNG TIN CÁ NHÂN DƯỚI DẠNG DANH SÁCH -->
             <div class="personal-info-box mt-4">
               <h3 class="info-title mb-3">THÔNG TIN CÁ NHÂN</h3>
               <ul class="list-unstyled info-list">
@@ -257,8 +166,8 @@
       </div>
     </div>
     <div class="container-fluid struggle-container position-relative">
-      <div class="text-center mb-5">
-        <h1 class="fw-bold text-primary">QUÁ TRÌNH PHẤN ĐẤU VÀ RÈN LUYỆN</h1>
+      <div class="header-title text-center mb-5">
+        <h1>QUÁ TRÌNH PHẤN ĐẤU VÀ RÈN LUYỆN</h1>
       </div>
 
       <div class="row struggle-section">
@@ -354,10 +263,6 @@
         </div>
       </div>
     </div>
-    <!-- ===================================== -->
-    <!-- [PHẦN 4: LIÊN HỆ NHANH] -->
-    <!-- ===================================== -->
-
     <div class="container text-center py-4">
       <a
         href="https://www.facebook.com/share/15Kbbdbduq/"
@@ -373,20 +278,15 @@
       </a>
     </div>
 
-    <!-- ===================================== -->
-    <!-- [PHẦN 5: FOOTER] -->
-    <!-- ===================================== -->
-
     <footer class="footer-section">
       <div class="container">
         <div class="row align-items-start">
-          <!-- CỘT 1: THÔNG TIN CÁ NHÂN -->
           <div class="col-md-4 mb-4">
             <div class="profile-info">
               <img
                 src="images/avatar.jpg"
                 alt="Nguyễn Văn Phước"
-                class="img-fluid rounded-circle mb-3 mx-auto d-block"
+                class="img-fluid rounded-circle mb-3 mx-auto d-block profile-avatar-footer"
               />
               <h5>Nguyễn Văn Phước</h5>
               <p class="tagline text-muted">
@@ -395,7 +295,6 @@
             </div>
           </div>
 
-          <!-- CỘT 2: LIÊN KẾT TRANG -->
           <div class="col-md-4 mb-4">
             <div class="links-widget">
               <h4 class="footer-title">Liên kết</h4>
@@ -429,7 +328,6 @@
             </div>
           </div>
 
-          <!-- CỘT 3: THÔNG TIN LIÊN HỆ -->
           <div class="col-md-4 mb-4">
             <div class="contact-widget">
               <h4 class="footer-title">Kết nối</h4>
@@ -442,10 +340,6 @@
       </div>
     </footer>
 
-    <!-- ===================================== -->
-    <!-- [PHẦN 6: BIỂU TƯỢNG MẠNG XÃ HỘI CỐ ĐỊNH] -->
-    <!-- ===================================== -->
-
     <div class="social-fixed">
       <a href="https://www.facebook.com/share/15Kbbdbduq/"
         ><img src="images/facebook.png" alt="Facebook"
@@ -456,23 +350,39 @@
       <a href="tel:0333947524"><img src="images/zalo.png" alt="Zalo" /></a>
     </div>
 
-    <!-- ===================================== -->
-    <!-- [PHẦN 7: BẢN QUYỀN] -->
-    <!-- ===================================== -->
-
     <div class="footer-copyright">
       © 2025 Nguyễn Văn Phước – hành trình phát triển bản thân
     </div>
-    <!-- ===================================== -->
-    <!-- [PHẦN 8: NHÚNG JAVASCRIPT] -->
-    <!-- ===================================== -->
-
-    <!-- Bootstrap JS Bundle: Gồm Popper + Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Các file script bổ sung -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+      // Script tùy chỉnh cho thanh tìm kiếm
+      const searchToggle = document.getElementById("searchToggle");
+      const searchInput = document.getElementById("searchInput");
+
+      searchToggle.addEventListener("click", () => {
+        const isHidden =
+          searchInput.style.display === "none" ||
+          searchInput.style.display === "";
+        searchInput.style.display = isHidden ? "block" : "none";
+        if (isHidden) searchInput.focus();
+      });
+    </script>
+
+    <script>
+      const container = document.querySelector(".falling-container");
+      function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.classList.add("falling-item");
+        flake.textContent = "❄"; // Biểu tượng tuyết
+        flake.style.left = Math.random() * window.innerWidth + "px";
+        flake.style.fontSize = 16 + Math.random() * 16 + "px";
+        container.appendChild(flake);
+        setTimeout(() => flake.remove(), 6000); // Xóa sau 6 giây
+      }
+      setInterval(createSnowflake, 300); // Cứ mỗi 300ms tạo 1 bông tuyết
+    </script>
   </body>
 </html>

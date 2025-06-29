@@ -1,0 +1,196 @@
+/* ==========================================================================
+   STYLE CHO TRANG HÀNH TRÌNH (hanhtrinh.html)
+   ========================================================================== */
+
+/* === BỔ SUNG STYLE CHO CÁC THÀNH PHẦN CÓ INLINE STYLE === */
+.navbar-logo {
+  height: 80px;
+}
+
+.search-input-style {
+  width: 200px;
+  display: none;
+  z-index: 999;
+}
+
+.banner-section {
+  position: relative;
+  height: 1000px;
+  overflow: hidden;
+}
+
+.banner-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-ratio-style {
+  height: 400px;
+  object-fit: cover;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+}
+
+/* === STYLE CHO HIỆU ỨNG RƠI === */
+/* Style cho container chứa các item rơi */
+.falling-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Style cho từng item rơi */
+.falling-item {
+  position: absolute;
+  color: white;
+  animation: fall linear infinite;
+  opacity: 0.7;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+/* === HIỆU ỨNG RƠI TUYẾT === */
+@keyframes fall {
+  to {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.falling-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.falling-item {
+  position: absolute;
+  top: -40px;
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  animation: fall 6s linear forwards;
+  user-select: none;
+}
+
+/* === PHẦN HERO (BANNER ĐẦU TRANG) === */
+.hero {
+  padding: 100px 20px 80px;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+.hero p.lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* === KHỐI THẺ (CARD SECTION) === */
+.custom-card-container {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  gap: 24px; /* Khoảng cách giữa các thẻ */
+  justify-content: center; /* Căn giữa các thẻ theo chiều ngang */
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+/* Định dạng từng thẻ card */
+.custom-card {
+  width: 350px;
+  height: 200px;
+  border-radius: 32px;
+  color: white;
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Hiệu ứng khi di chuột vào thẻ */
+.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Tiêu đề và nội dung của thẻ */
+.custom-card-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.custom-card-text {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+/* --- MÀU NỀN RIÊNG CHO TỪNG LOẠI THẺ --- */
+.card-sv5t {
+  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.card-ltv {
+  background: linear-gradient(135deg, #0062ff 0%, #33ccff 100%);
+}
+
+.card-tntt {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+/* --- RESPONSIVE TRANG HÀNH TRÌNH --- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p.lead {
+    font-size: 1rem;
+  }
+
+  .custom-card {
+    width: 100%;
+    height: 180px;
+  }
+
+  .custom-card-title {
+    font-size: 22px;
+  }
+
+  .custom-card-text {
+    font-size: 18px;
+  }
+
+  .image-ratio-style {
+    height: 300px;
+  }
+}

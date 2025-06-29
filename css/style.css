@@ -1,0 +1,262 @@
+/* ==========================================================================
+   STYLE TOÀN CỤC (ÁP DỤNG CHO TẤT CẢ CÁC TRANG)
+   Màu chủ đạo: Xanh dương hiện đại #0d6efd
+   Màu nền: Xám sáng #f8f9fa, ngà kem #fefcf9
+   Màu chữ: Xám đậm dễ đọc #212529, #343a40
+========================================================================== */
+
+/* === FONT & TOÀN TRANG === */
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  color: #212529;
+  background-color: #fefcf9;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* === NAVBAR === */
+.navbar {
+  min-height: 90px;
+}
+.navbar-logo {
+  height: 80px;
+}
+.search-toggle-icon {
+  cursor: pointer;
+}
+.search-input-style {
+  width: 200px;
+  display: none;
+  z-index: 999;
+}
+.navbar .dropdown-item {
+  font-weight: 700;
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+}
+.navbar .dropdown-menu {
+  background-color: #f8f9fa;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background-color: #e9ecef;
+  color: #0d6efd;
+}
+.dropdown.show > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.navbar-nav .nav-link {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #212529;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #0d6efd;
+}
+
+/* === HEADER TIÊU ĐỀ === */
+.header-title h1 {
+  font-weight: 800;
+  color: #0d6efd;
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+.header-title h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0d6efd;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* === ẨN PHẦN TỬ === */
+.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   CHÂN TRANG CHUYÊN NGHIỆP
+========================================================================== */
+
+.footer-section {
+  background-color: #f1f3f5;
+  color: #212529;
+  padding: 60px 20px 20px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  border-top: 2px solid #dee2e6;
+}
+
+.footer-section .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-section .col-md-4 {
+  flex: 1 1 30%;
+  min-width: 280px;
+  box-sizing: border-box;
+}
+
+.footer-section .profile-info {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-avatar-footer {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid #adb5bd;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-40px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-avatar-footer:hover {
+  transform: translateY(-45px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.footer-section .profile-info h5 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  color: #212529;
+  letter-spacing: 0.03em;
+}
+.footer-section .profile-info .tagline {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-bottom: 3px ridge #ced4da;
+  padding-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.link-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.link-list li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.link-list a {
+  font-size: 17px;
+  color: #343a40;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease-in-out;
+}
+.link-list a:hover,
+.link-list a:focus {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.contact-widget p {
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.footer-copyright {
+  background-color: #fffefe;
+  color: #343a40;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 15px;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  margin-top: 0;
+}
+
+/* === NÚT MẠNG XÃ HỘI CỐ ĐỊNH === */
+.social-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.social-fixed a img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.social-fixed a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* === RESPONSIVE FOOTER === */
+@media (max-width: 768px) {
+  .footer-section .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .footer-section {
+    text-align: center;
+  }
+  .footer-section .footer-title {
+    border: none;
+    padding-bottom: 0;
+  }
+  .footer-section .profile-info h5 {
+    font-size: 24px;
+  }
+  .footer-section .profile-info .tagline {
+    font-size: 16px;
+  }
+  .link-list a,
+  .contact-widget p {
+    font-size: 16px;
+  }
+  .footer-section .col-md-4 {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+     STYLE CHO PHẦN HEADER (HERO SECTION)
+     ========================================================================== */
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    #e9f3ff,
+    #ffffff
+  ); /* Nền gradient nhẹ nhàng */
+  padding: 100px 20px;
+  color: #1a237e; /* Màu chữ tiêu đề */
+}
+
+.hero-section h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.hero-section .lead {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #555;
+}
+
+/* ==========================================================================
+         STYLE CHO CÁC THẺ DỰ ÁN (PROJECT CARDS)
+         ========================================================================== */
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a237e;
+}
+
+.project-card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card .card-body {
+  padding: 1.5rem;
+}
+
+.project-card .card-title {
+  font-size: 1.3rem;
+  color: #1a237e;
+}
+
+.project-card .badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4em 0.7em;
+  border-radius: 20px;
+}
+
+.project-card .btn {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+         MEDIA QUERIES CHO RESPONSIVE
+         ========================================================================== */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .project-card .card-img-top {
+    height: 180px;
+  }
+}

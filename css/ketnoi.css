@@ -1,0 +1,182 @@
+/* ========================================================================== */
+/* STYLE CHO TRANG KẾT NỐI (ketnoi.html)                                 */
+/* ========================================================================== */
+
+/* Main container for the contact section */
+.contact-section {
+  width: 100vw; /* Chiều rộng tràn màn hình */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
+  /* Điều chỉnh padding để cân đối hơn trên màn hình lớn */
+  padding: 100px 30px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  color: #333;
+  /* Thêm hiệu ứng transition cho màu nền */
+  transition: background 0.5s ease;
+}
+
+/* The main card containing contact info and form */
+.contact-card {
+  background: #fff;
+  border-radius: 24px; /* Bo góc mạnh hơn, trông hiện đại hơn */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Đổ bóng sắc nét hơn */
+  /* Tăng padding để nội dung có không gian thở */
+  padding: 50px 70px;
+  width: 90%; /* Chiếm 90% chiều rộng của container */
+  max-width: 1100px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* Thêm hiệu ứng chuyển động khi hover */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.4s ease;
+}
+
+/* Hover effect for the contact card */
+.contact-card:hover {
+  transform: translateY(-8px); /* Nhấc thẻ lên cao hơn một chút */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn, tạo hiệu ứng nổi bật */
+}
+
+/* Styling for main titles */
+.contact-section h3 {
+  font-size: 2.8rem; /* Tăng cỡ chữ lên 2.8rem */
+  font-weight: 700; /* Dùng font-weight đậm hơn */
+  color: #1a237e; /* Màu chữ chính */
+  margin-bottom: 25px;
+}
+
+/* Styling for subtitles */
+.contact-section h5 {
+  font-size: 1.6rem; /* Điều chỉnh cỡ chữ phụ */
+  font-weight: 600;
+  color: #555;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Styling for paragraphs, list items, and form labels */
+.contact-info p,
+.contact-info li,
+.contact-form .form-label {
+  font-size: 1.15rem; /* Điều chỉnh kích thước chữ hợp lý hơn */
+  line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc */
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Styling for social links and other anchors */
+.contact-info a {
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Để hiệu ứng transform hoạt động */
+}
+
+.contact-info a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+  transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ khi hover */
+}
+
+.contact-info .social-links {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.contact-info .social-links li {
+  margin-bottom: 12px;
+}
+
+/* Styling for form input fields */
+.contact-form .form-control {
+  font-size: 1.1rem;
+  padding: 1rem 1.2rem; /* Tăng padding để input trông to và dễ click hơn */
+  border: 2px solid #e0e0e0; /* Viền dày hơn và màu nhạt hơn */
+  border-radius: 12px; /* Bo góc mạnh hơn */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+}
+
+/* Focus effect for input fields */
+.contact-form .form-control:focus {
+  border-color: #0d6efd;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15); /* Hiệu ứng glow tinh tế hơn */
+  outline: none; /* Bỏ viền outline mặc định của trình duyệt */
+}
+
+/* Styling for the submit button */
+.btn-primary {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 14px 30px; /* Tăng padding cho nút */
+  border-radius: 50px; /* Bo tròn hoàn toàn */
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.btn-primary:hover {
+  transform: translateY(-4px); /* Nâng nút lên cao hơn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng sâu hơn */
+  background-color: #0b5ed7; /* Đổi màu nền khi hover */
+}
+
+/* Separator line style */
+.separator {
+  border-left: 2px solid #e0e0e0;
+  height: 100%;
+  width: 1px;
+}
+
+/* ============================== */
+/* RESPONSIVE STYLES FOR MOBILE DEVICES */
+/* ============================== */
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 60px 15px; /* Giảm padding trên tablet */
+  }
+  .contact-card {
+    padding: 35px 30px; /* Giảm padding thẻ trên tablet */
+    width: 95%;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .separator {
+    display: none;
+  }
+  .contact-card {
+    padding: 30px 20px; /* Giảm padding trên điện thoại */
+  }
+  .contact-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .contact-section h5 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+  }
+  .contact-info p,
+  .contact-info li,
+  .contact-form .form-label,
+  .contact-form .form-control {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .contact-form .form-control {
+    padding: 0.8rem 1rem;
+  }
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+  }
+}
