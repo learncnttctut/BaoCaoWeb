@@ -2,9 +2,7 @@
      STYLE CHO PHẦN HEADER (HERO SECTION)
      ========================================================================== */
 .hero-section {
-  background: linear-gradient(135deg,
-      #e9f3ff,
-      #ffffff);
+  background: linear-gradient(135deg, #e9f3ff, #ffffff);
   /* Nền gradient nhẹ nhàng */
   padding: 100px 20px;
   color: #1a237e;
@@ -12,14 +10,26 @@
 }
 
 .hero-section h1 {
-  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: -1px;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+.hero-section h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #0d6efd; /* hoặc màu khác tùy chọn */
+  margin: 16px auto 0;
+  border-radius: 2px;
 }
 
 .hero-section .lead {
-  max-width: 700px;
-  margin: 0 auto 30px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
   color: #555;
 }
 
@@ -43,7 +53,7 @@
 
 /* Tạo gạch chân trang trí cho tiêu đề */
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 80px;

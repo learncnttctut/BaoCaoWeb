@@ -167,6 +167,35 @@
   background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
+/*-- mẫu chuyện hay ý nghĩa -->*/
+.gradient-bg {
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+}
+
+.inspire-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.inspire-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* --- RESPONSIVE TRANG HÀNH TRÌNH --- */
 @media (max-width: 768px) {
   .hero h1 {

@@ -83,15 +83,72 @@
         </div>
       </div>
     </nav>
-
-    <section class="banner-section">
+    <!---->
+    <section
+      class="banner-section"
+      style="position: relative; overflow: hidden"
+    >
       <img
         src="images/bannerIndex.jpg"
+        class="img-fluid w-100 banner-image-style"
         alt="Banner của Phước"
-        class="img-fluid rounded w-100 banner-image-style"
       />
-      <div class="falling-container"></div>
+      <div
+        id="tsparticles"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+        "
+      ></div>
     </section>
+
+    <!-- Thư viện tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- Cấu hình hiệu ứng bụi phấn trắng -->
+    <script>
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: false },
+        particles: {
+          number: {
+            value: 100,
+            density: { enable: true, area: 800 },
+          },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: {
+            value: 1,
+            random: true,
+          },
+          size: {
+            value: { min: 2, max: 4 }, // 💡 bông tuyết to hơn
+            random: true,
+          },
+          move: {
+            enable: true,
+            speed: 0.8,
+            direction: "bottom",
+            outModes: {
+              default: "out",
+            },
+          },
+          shadow: {
+            enable: true,
+            color: "#ffffff",
+            blur: 5, // Độ mờ của phát sáng
+          },
+        },
+        background: {
+          color: "transparent",
+        },
+        detectRetina: true,
+      });
+    </script>
 
     <div class="container-fluid mt-5">
       <div class="header-title text-center mb-5">
@@ -169,8 +226,39 @@
       <div class="header-title text-center mb-5">
         <h1>QUÁ TRÌNH PHẤN ĐẤU VÀ RÈN LUYỆN</h1>
       </div>
+      <!---->
+      <div class="row struggle-section position-relative">
+        <canvas
+          id="confettiCanvas"
+          class="position-absolute top-0 start-0 w-100 h-100"
+          style="pointer-events: none; z-index: 10"
+        ></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <script>
+          const canvas = document.getElementById("confettiCanvas");
+          const confettiZone = confetti.create(canvas, {
+            resize: true,
+            useWorker: true,
+          });
 
-      <div class="row struggle-section">
+          // Tạo hiệu ứng rơi nhanh và đều khắp vùng
+          setInterval(() => {
+            confettiZone({
+              particleCount: 5,
+              startVelocity: 15,
+              spread: 360,
+              ticks: 1500,
+              origin: {
+                x: Math.random(),
+                y: 0,
+              },
+              gravity: 1,
+              scalar: 1.1,
+              colors: ["#ff0", "#f00", "#0f0", "#00f", "#f0f"],
+            });
+          }, 150);
+        </script>
+
         <div
           class="col-md-6 content-box d-flex flex-column justify-content-center"
         >
@@ -229,11 +317,11 @@
         </div>
 
         <div
-          class="col-md-6 p-0 d-flex align-items-center justify-content-center"
+          class="col-md-6 p-0 d-flex align-items-center justify-content-center carousel-column-bg"
         >
           <div
             id="carouselExampleFade"
-            class="carousel slide carousel-fade w-100"
+            class="carousel slide carousel-fade w-100 struggle-carousel"
             data-bs-ride="carousel"
           >
             <div class="carousel-inner">
@@ -371,18 +459,7 @@
       });
     </script>
 
-    <script>
-      const container = document.querySelector(".falling-container");
-      function createSnowflake() {
-        const flake = document.createElement("div");
-        flake.classList.add("falling-item");
-        flake.textContent = "❄"; // Biểu tượng tuyết
-        flake.style.left = Math.random() * window.innerWidth + "px";
-        flake.style.fontSize = 16 + Math.random() * 16 + "px";
-        container.appendChild(flake);
-        setTimeout(() => flake.remove(), 6000); // Xóa sau 6 giây
-      }
-      setInterval(createSnowflake, 300); // Cứ mỗi 300ms tạo 1 bông tuyết
-    </script>
+    <!-- Thư viện confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </body>
 </html>
